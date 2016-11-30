@@ -1,0 +1,39 @@
+.parent-site-header {
+  background: $color-brand;
+  box-shadow: 0 2px 5px 0 rgba($color-shadow, .5);
+  padding: 0;
+  height: auto;
+
+  @media (min-width: 1 + breakpoint(medium)) {
+    left: 10px;
+    height: 44px;
+    margin: 0;
+    position: absolute;
+    top: 129px;
+    width: 220px;
+  } // @media (max-width: breakpoint(1 + medium))
+
+  a {
+    color: $color-canvas;
+    text-decoration: none;
+    padding: 5px 15px;
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      padding: 5px;
+      text-align: center;
+    } // @media (max-width: breakpoint(1 + medium))
+
+    p {
+      color: $color-canvas;
+      font-size: 16px;
+      font-weight: 400;
+
+      @media (min-width: 1 + breakpoint(medium)) {
+        margin: 0;
+      } // @media (max-width: breakpoint(1 + medium))
+
+    } //p
+
+  } // a
+
+} // .parent-site-header

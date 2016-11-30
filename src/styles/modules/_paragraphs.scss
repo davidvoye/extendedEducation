@@ -1,0 +1,41 @@
+// This file can be used for general paragraphs style
+
+.paragraphs-item-image-single-full-width {
+  margin: 20px 0;
+
+  img {
+    display: block;
+  } // img
+
+} // .paragraphs-item-image-single-full-width
+
+.entity-paragraphs-item {
+  @include clearfix;
+
+  img {
+    height: auto !important;
+  }
+
+  .content {
+    clear: none;
+    // overflow: hidden;
+  } // .content
+
+} // .entity-paragraphs-item
+
+.paragraphs-item-text-content,
+.paragraphs-item-paragraphs-pack-content {
+
+  .media-element {
+
+    @media (max-width: breakpoint(small)) {
+      display: block;
+      float: none !important; // important to override inline styles
+      margin-left: 0 !important; // important to override inline styles
+      margin-right: 0 !important; // important to override inline styles
+      width: 100% !important; // important to override inline styles
+    } // @media (max-width: breakpoint(small))
+
+  } // .media-element
+
+} // .paragraphs-item-text-content, .paragraphs-item-paragraphs-pack-content

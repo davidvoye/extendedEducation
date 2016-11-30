@@ -1,0 +1,27 @@
+.page-intro {
+  margin: 60px auto;
+  text-align: center;
+  width: span(8);
+
+  @media (max-width: breakpoint(small)) {
+    width: span(12);
+  } // @media (max-width: breakpoint(small))
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin: 30px 0;
+  } // @media (max-width: breakpoint(xsmall)
+
+  &__title {
+    @include typography(PageHeading2);
+    margin: 0 0 15px;
+  } // &__title
+
+  &__description {
+
+    p {
+      @include typography(Intro);
+    } // p
+
+  } // &__description
+
+} // .page-intro

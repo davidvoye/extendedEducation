@@ -1,0 +1,109 @@
+.flexslider {
+  background: $color-canvas;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+  margin: 0 0 60px;
+  position: relative;
+
+  &:hover .flex-prev,
+  &:hover .flex-next {
+    opacity: 1;
+  } // &:hover .flex-prev, &:hover .flex-next
+
+  .flex-direction-nav {
+    bottom: -44px;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+
+    li {
+      float: left;
+      margin-right: 1px;
+    } // li
+
+    a {
+      background: $color-program-1;
+      text-decoration: none;
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      position: static;
+      top: auto;
+      z-index: 10;
+      overflow: hidden;
+      opacity: 1;
+      cursor: pointer;
+      color: $color-canvas;
+      text-align: center;
+      text-shadow: none;
+      transition: none;
+
+      &:hover,
+      &:focus {
+        background: $color-brand-accent2;
+        color: $color-brand;
+      } // &:hover, &:focus
+
+      &:before {
+        @include icon($zmdi-var-long-arrow-left, $font-material);
+        font-size: 30px;
+        line-height: 44px;
+      }
+
+      &.flex-next:before {
+        @include icon($zmdi-var-long-arrow-right, $font-material);
+        font-size: 30px;
+        line-height: 44px;
+      }
+
+    } // a
+
+  } // .flex-direction-nav
+
+  .flex-control-nav {
+    bottom: -45px;
+    left: 120px;
+    position: absolute;
+    text-align: left;
+    width: auto;
+
+    li {
+      margin: 0 7px;
+
+      &:before {
+        display: none;
+      } // &:before
+
+    } // li
+
+    a {
+      width: 12px;
+      height: 12px;
+      display: block;
+      background: $color-program-1;
+      cursor: pointer;
+      text-indent: -9999px;
+      border-radius: 0;
+      box-shadow: none;
+
+      &:hover {
+        background: $color-brand;
+      } // &:hover
+
+      &.flex-active {
+        background: $color-brand-accent2;
+      } // &.flex-active
+
+    } // a
+
+  } // .flex-control-nav
+
+  li {
+    background: none;
+    list-style: none;
+    padding: 0;
+  } // li
+
+} // .flexslider

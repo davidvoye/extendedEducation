@@ -1,0 +1,39 @@
+.u-clearfix {
+  @include clearfix;
+}
+
+.u-reverse {
+  color: $color-canvas;
+  * {
+    color: inherit;
+  }
+  a:hover,
+  a:focus {
+    color: inherit;
+  } // a:hover
+}
+
+.u-screen-reader {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.u-no-margin-top {
+  margin-top: 0 !important;
+}
+
+.u-no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.u-no-padding-top {
+  padding-top: 0 !important;
+}
+
+.u-no-padding-bottom {
+  padding-bottom: 0 !important;
+}

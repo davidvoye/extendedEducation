@@ -1,0 +1,100 @@
+/**
+ * @file
+ * Customization for Dual
+ *
+ */
+/* *******************
+   Color Variables
+******************* */
+/* *******************
+ 		Mixins
+******************* */
+/* ****************************************************
+                Small 0 -> 801px
+**************************************************** */
+@media all and (max-width: 801px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000320}}
+  .western-header .western-logo a {
+    margin-bottom: 0;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000322}}
+  .parent-site-header {
+    float: left;
+    width: 8.33333%;
+    margin-left: 0%;
+    margin-right: -8.33333%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    *behavior: url("/sites/all/themes/wwuzen/js/boxsizing.htc");
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+    margin: 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000325}}
+  .parent-site-header a p {
+    margin: 0;
+  }
+}
+/* ****************************************************
+                Screens 801px ->
+**************************************************** */
+@media all and (min-width: 801px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000335}}
+  header[role="banner"] > div {
+    max-height: 270px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000337}}
+  .site-header .site-banner {
+    overflow: hidden;
+    max-height: 138px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000342}}
+  .parent-site-header {
+    margin-bottom: 10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000344}}
+  .parent-site-header a p {
+    margin: 0 0 0 260px;
+  }
+}
+/* ****************************************************
+                General Styles
+**************************************************** */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000352}}
+.parent-site-header {
+  height: 34px;
+  background-color: #bad80a;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000356}}
+.parent-site-header a {
+  color: #006b3f;
+  display: block;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000360}}
+.parent-site-header a:hover, .parent-site-header a:active, .parent-site-header a:focus {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none;
+  color: #003f87;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/colincalnan\/projects\/wwu\/ee\/docroot\/sites\/all\/themes\/wwuzen-dual-ee\/sass\/parent-site-customization\.scss}line{font-family:\0000365}}
+.parent-site-header a p {
+  line-height: 34px;
+  text-transform: uppercase;
+}

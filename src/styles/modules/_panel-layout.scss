@@ -1,0 +1,98 @@
+.wwu-ee-100-percent-column {
+  @include container;
+} // .wwu-ee-100-percent-column
+
+.wwu-ee-25-percent-left-column,
+.wwu-ee-25-percent-right-column {
+  @include span(3 no-gutter);
+
+  @media (max-width: breakpoint(xsmall)) {
+    @include span(12 no-gutter);
+  } // @media (max-width: breakpoint(xsmall))
+
+} // .wwu-ee-25-percent-left-column, .wwu-ee-25-percent-right-column
+
+.wwu-ee-25-percent-left-column {
+  padding-right: $gutter-column;
+
+  @media (max-width: breakpoint(xsmall)) {
+    padding-right: 0;
+  } // @media (max-width: breakpoint(xsmall))
+
+} // .wwu-ee-25-percent-left-column
+
+.wwu-ee-25-percent-right-column {
+  padding-left: $gutter-column;
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin: 30px 0 0;
+    padding-left: 0;
+  } // @media (max-width: breakpoint(xsmall))
+
+} // .wwu-ee-25-percent-right-column
+
+.wwu-ee-75-percent-left-column,
+.wwu-ee-75-percent-right-column {
+  @include span(9 no-gutter);
+
+  @media (max-width: breakpoint(xsmall)) {
+    @include span(12 no-gutter);
+    padding: 0;
+  } // @media (max-width: breakpoint(xsmall))
+
+  .wwu-ee-75-percent-left-column,
+  .wwu-ee-75-percent-right-column {
+    @include span(8);
+
+    @media (max-width: breakpoint(xsmall)) {
+      @include span(12 no-gutter);
+      padding: 0;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // .wwu-ee-75-percent-left-column, .wwu-ee-75-percent-right-column
+
+  .wwu-ee-25-percent-left-column,
+  .wwu-ee-25-percent-right-column {
+    @include span(4);
+
+    @media (max-width: breakpoint(xsmall)) {
+      @include span(12 no-gutter);
+      padding: 0;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // .wwu-ee-25-percent-left-column, .wwu-ee-25-percent-right-column
+}
+
+.wwu-ee-75-percent-left-column {
+  padding-right: $gutter-column;
+
+  @media (max-width: breakpoint(xsmall)) {
+    padding-right: 0;
+  } // @media (max-width: breakpoint(xsmall))
+
+} // .wwu-ee-75-percent-left-column
+
+.wwu-ee-75-percent-right-column {
+  padding-left: $gutter-column;
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin: 30px 0 0;
+    padding-left: 0;
+  } // @media (max-width: breakpoint(xsmall))
+
+} // .wwu-ee-75-percent-right-column
+
+.wwu-ee-75-percent-inset {
+  @include span(last 4);
+  margin: 0 0 30px 20px;
+
+  @media (max-width: breakpoint(small)) {
+    @include span(last 6);
+    padding-right: 0;
+  } // @media (max-width: breakpoint(small))
+
+  @media (max-width: breakpoint(xsmall)) {
+    width: span(12);
+  } // @media (max-width: breakpoint(xsmall))
+
+} // .wwu-ee-75-percent-inset

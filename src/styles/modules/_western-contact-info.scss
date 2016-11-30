@@ -1,0 +1,56 @@
+.western-contact-info {
+
+  a {
+    color: $color-canvas;
+    text-decoration: none;
+  }
+
+  // Set the default styles for the p content in the right footer block
+  p {
+    color: $color-canvas;
+    font-size: 12px;;
+    position:relative;
+    padding-left:2em;
+    margin-bottom:.75em;
+    margin-top:0;
+    line-height:1.5em;
+
+    &:last-child {
+      margin-bottom:1.25em;
+    }
+
+    &:before {
+      position:absolute;
+      left:0;
+    }
+  }
+
+  .western-address:before,
+  .western-telephone:before,
+  .western-contact:before {
+    font-family: $font-fontello;
+    font-size: 14px;
+    color: $color-program-3;
+  }
+
+  .western-address:before {
+    content: '\e800';
+    width:14px;
+    height:12px;
+    margin-top:-1px;
+  }
+
+  .western-telephone:before {
+    content: '\21';
+    width:12px;
+    height:10px;
+  }
+
+  .western-contact:before {
+    content: '\25';
+    width:11px;
+    height:8px;
+    margin-left:1px;
+  }
+
+} // .western-contact-info

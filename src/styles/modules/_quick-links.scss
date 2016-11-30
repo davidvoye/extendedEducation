@@ -1,0 +1,61 @@
+.pane-menu-quick-links,
+div[class*="pane-menu-quick-links"] {
+  background: $color-canvas;
+  border-top: solid 6px $color-program-1;
+  box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+  margin-top: 25px;
+  padding: 40px 20px 20px;
+  position: relative;
+  text-align: left;
+
+  &:before {
+    @include icon($icon-bolt);
+    background: $color-program-1;
+    box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+    color: $color-canvas;
+    font-size: 30px;
+    height: 50px;
+    left: 20px;
+    line-height: 1.6em;
+    position: absolute;
+    text-align: center;
+    top: -25px;
+    width: 50px;
+  } // &:before
+
+  .pane-title {
+    @include typography(PageHeading5);
+    color: $color-brand;
+    margin: 0 0 20px;
+  } // .pane-title
+
+  .menu {
+
+    li {
+      background: none;
+      border-top: solid 1px $color-keyline;
+      list-style-image: none;
+      list-style-type: none;
+      padding: 5px 0;
+    } // li
+
+    a {
+      color: $color-brand-accent;
+      font-size: 14px;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-brand;
+      } // &:hover
+
+      &:after {
+        @include icon($icon-angle-double-right);
+        padding-left: 5px;
+      } // &:after
+
+    } // a
+
+  } // .menu
+
+} // .pane-menu-quick-links

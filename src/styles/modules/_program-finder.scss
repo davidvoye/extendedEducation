@@ -1,0 +1,240 @@
+.view-program-finder {
+
+  .view-filters {
+
+    form {
+      border-top: 0;
+      box-shadow: none;
+      padding: 0;
+    } // form
+
+    label {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    } // label, hidden on screen, still available for screen readers
+
+    .views-widget label {
+      height: auto;
+      left: auto;
+      position: static;
+      width: auto;
+    } // .views-widget label, overwrite label styles for checkboxes and radio
+
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background: $color-canvas;
+      border: 0;
+      border-bottom: solid 1px $color-keyline;
+      border-radius: 0;
+      font-size: 15px;
+      line-height: 1.4em;
+      padding-right: 20px;
+
+      .ie & {
+        padding-right: 7px;
+      } // .ie &
+
+    } // select
+
+    .form-item-program-type,
+    .form-item-location,
+    .form-item-audience {
+      position: relative;
+
+      &:after {
+        @include icon($zmdi-var-caret-down, $font-material);
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .ie & {
+          display: none;
+        } // .ie &
+
+      } // &:after
+
+    } // .form-item-program-type
+
+    .form-type-bef-checkbox {
+      padding: 0 0 0 20px;
+      position: relative;
+
+      input {
+        height: 1px;
+        left: -10000px;
+        overflow: hidden;
+        position: absolute;
+        top: auto;
+        width: 1px;
+
+        &:checked+label:before {
+          @include icon($zmdi-var-check-square, $font-material);
+        } // &:checked+label:before
+
+      } // input
+
+      label {
+        font-size: 15px;
+        line-height: 1em;
+
+        &:before {
+          @include icon($zmdi-var-square-o, $font-material);
+          display: block;
+          font-size: 16px;
+          height: 20px;
+          left: 0;
+          position: absolute;
+          top: 5px;
+          width: 20px;
+        } // &:before
+
+      } // label
+
+    } // .form-type-bef-checkbox
+
+    .views-widget-filter-field_tr_program_type_tid,
+    .views-widget-filter-field_tr_location_tid,
+    .views-widget-filter-field_tr_audience_tid {
+
+       @media (max-width: breakpoint(large)) {
+        padding-right: 30px;
+        width: 33%;
+      } // @media (max-width: breakpoint(large))
+
+      @media (max-width: breakpoint(xsmall)) {
+        margin-bottom: 10px;
+        padding-right: 0;
+        width: 100%;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // .views-widget-filter-field_tr_program_type_tid, .views-widget-filter-field_tr_location_tid, .views-widget-filter-field_tr_audience_tid
+
+    .views-widget-filter-field_tr_audience_tid {
+
+       @media (max-width: breakpoint(large)) {
+        padding-right: 0;
+       } // @media (max-width: breakpoint(large))
+
+    } // .views-widget-filter-field_tr_audience_tid
+
+    .views-widget-filter-field_is_online_value,
+    .views-widget-filter-field_hybrid_value,
+    .views-widget-filter-field_face_to_face_value,
+    .views-widget-filter-field_credit_course_value {
+      float: right;
+      padding: 13px 0 0 15px;
+
+      @media (max-width: breakpoint(large)) {
+        float: left;
+        padding: 30px 30px 0 0;
+      } // @media (max-width: breakpoint(large))
+
+      @media (max-width: breakpoint(xsmall)) {
+        width: 100%;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // .views-widget-filter-field_is_online_value
+
+    #edit-title-wrapper {
+      float: none;
+      margin: 0 auto 60px;
+      max-width:350px;
+      padding: 0;
+      position: relative;
+      width: 100%;
+
+      @media (max-width: breakpoint(xsmall)) {
+        margin-bottom: 30px;
+      } // @media (max-width: breakpoint(xsmall))
+
+      .form-item:after {
+        @include icon($zmdi-var-search, $font-material);
+        color: $color-brand-accent;
+        font-size: 25px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      } // .form-item:after
+
+      input[type='text'] {
+        background: $color-canvas;
+        border: solid 1px $color-keyline;
+        border-radius: 0;
+        box-shadow: inset 2px 2px 4px 0 rgba($color-shadow, .1);
+        color: $color-brand-accent;
+        font-size: 15px;
+        padding-right: 35px;
+      } // input
+
+    } // #edit-title-wrapper
+
+  } // .view-filters
+
+  .view-content {
+    background: $color-canvas-alt;
+    border-bottom: solid 1px $color-keyline;
+    border-top: solid 1px $color-keyline;
+    left: 50%;
+    margin: 20px -50vw 0;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+
+    ul {
+      @include clearfix;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 60px auto;
+      max-width: 1080px;
+      padding: 0;
+    } // ul
+
+    li {
+      background: none;
+      display: flex;
+      float: left;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+      width: span(4);
+
+      @media (max-width: breakpoint(xsmall)) {
+        width: span(12);
+      } // @media (max-width: breakpoint(large))
+
+    } // li
+
+  } // .view-content
+
+  .view-empty {
+    padding: 30px 0;
+  } // .view-empty
+
+  .pager {
+    margin-top: -50px;
+    position: relative;
+
+    a {
+      color: $color-brand-accent;
+
+      &:hover,
+      &:focus {
+        color: $color-brand;
+      } // &:hover, &:focus
+
+    } // a
+
+  } // .pager
+
+} // .view-program-finder

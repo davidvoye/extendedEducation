@@ -1,0 +1,16 @@
+ul {
+  @for $i from 1 through 4 {
+    &.columns-#{$i} {
+      @include column-count($i, 10px);
+            
+      @media (min-width: 1 + breakpoint(xsmall)) and (max-width: breakpoint(medium)) {
+        @include column-count(2, 10px);
+      }
+      
+      @media (max-width: breakpoint(xsmall)) {
+        @include column-count(1, 10px);
+      }      
+      
+    }
+  }
+}

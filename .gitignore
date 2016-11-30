@@ -1,0 +1,10 @@
+*.scssc
+#*.css
+#*.min.js
+.sass-cache
+.DS_Store
+.buildpath
+.project
+.settings
+node_modules
+vendor

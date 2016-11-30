@@ -1,0 +1,44 @@
+.ui-accordion {
+  padding: 10px 0;
+  
+  .ui-accordion-header {
+    padding-left: 18px;
+    margin: 5px 0;
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: $color-brand-accent;
+    line-height: 1.25;
+    position: relative;
+    
+    &:before {
+      position: absolute;
+      @include icon($zmdi-var-chevron-right, $font-material);
+      left: 7px;
+      top: 4px;
+    } // :before
+    
+    &.ui-accordion-header-active {
+      color: $color-brand;
+      
+      &:before {
+        @include icon($zmdi-var-chevron-down, $font-material);
+        left: 5px;
+      } // :before
+    } // .ui-accordion-header-active
+  } // .ui-accordion-header
+  
+  .ui-accordion-content  {
+    padding: 0 0 0 18px;
+    border: none;
+    background: none;
+    
+    ul {
+      li {
+        color: $color-base;
+        @include typography(Longform);
+        
+      }
+    }
+  } // .ui-accordion-content
+} // .ui-accordion

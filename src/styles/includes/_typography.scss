@@ -1,0 +1,97 @@
+// Mixin to reuse common typography styles
+// Insert unique properties in the $types map and insert common properties at the bottom
+// You can copy the headingtype mixin to create a second one for the body type
+
+@mixin typography($type: Longform) {
+  $types: (
+    // typename: (
+    //   insert unique properties here for this type
+    //   breakpoint-name: (
+    //     insert properties for this breakpoint
+    //     breakpoint-name must match an entry in the $breakpoint map in variables.scss or it will not compile
+    //   )
+    // ),
+    // Example of a base style for h1
+    PageHeading1: (
+      font-size: 48px,
+      font-weight: $font-weight-medium,
+      letter-spacing: -1px,
+      line-height: 1.1em,
+    ),
+    PageHeading2: (
+      font-size: 36px,
+      font-weight: $font-weight-medium,
+      letter-spacing: -1px,
+      line-height: 1.1em,
+    ),
+    PageHeading3: (
+      font-size: 28px,
+      font-weight: $font-weight-medium,
+      line-height: 1.1em,
+    ),
+    PageHeading4: (
+      font-size: 24px,
+      font-weight: $font-weight-medium,
+      line-height: 1.1em,
+    ),
+    PageHeading5: (
+      font-size: 18px,
+      font-weight: $font-weight-medium,
+      letter-spacing: -.5px,
+      line-height: 1.1em,
+    ),
+    PageHeading6: (
+      font-size: 16px,
+      font-weight: $font-weight-medium,
+      line-height: 1.1em,
+    ),
+    Intro: (
+      color: $color-base,
+      font-size: 18px,
+      font-weight: $font-weight-light,
+      line-height: 1.3em,
+    ),
+    Longform: (
+      color: $color-base,
+      font-size: 15px,
+      font-weight: $font-weight-light,
+      line-height: 1.55em,
+    ),
+    Shortform: (
+      color: $color-base,
+      font-size: 14px,
+      font-weight: $font-weight-light,
+      line-height: 1.3em,
+    ),
+    SmallText: (
+      color: $color-base,
+      font-size: 12px,
+      font-weight: $font-weight-light,
+      line-height: 1.25em,
+    )
+  );
+
+  @if(map-has-key($types, $type)) {
+    $map: map-get($types, $type);
+    @each $property, $value in $map {
+      @if type-of(map-get($map, #{$property})) != map {
+        #{$property}: $value;
+      }
+    }
+    @each $breakpoint, $width in $breakpoints {
+      $breakpoint-map: map-get($map, $breakpoint);
+      @if type-of($breakpoint-map) == map {
+        @media (max-width: $width){
+          @each $property, $value in $breakpoint-map {
+            #{$property}: $value;
+          }
+        }
+      }
+    }
+  } @else {
+    @error "Could not find typography style: " + $type;
+  }
+
+  // Insert common properties here
+  font-family: $font-base;
+}

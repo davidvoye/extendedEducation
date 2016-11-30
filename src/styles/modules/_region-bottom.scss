@@ -1,0 +1,128 @@
+.region-bottom {
+  @include container;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 60px -20px 0 0;
+  position: relative;
+  z-index: 5;
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin: 30px 0 0;
+  } // @media (max-width: breakpoint(xsmall))
+
+  .block {
+    background: $color-canvas;
+    border-top: solid 6px $color-program-1;
+    box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+    float: left;
+    margin: 25px 20px 0 0;
+    padding: 40px 20px 20px;
+    position: relative;
+    text-align: left;
+    width: calc(25% - 20px);
+
+    @media (max-width: breakpoint(xsmall)) {
+      margin: 25px 0;
+      width: 100%;
+    } // @media (max-width: breakpoint(xsmall))
+
+    .og-context-node & {
+      width: calc(25% - 20px);
+
+      @media (max-width: breakpoint(xsmall)) {
+        margin: 25px 0;
+        width: 100%;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // .og-context-node &
+
+    &[class*="icon-"] {
+
+      &:before {
+        @include icon($icon-bolt);
+        background: $color-program-1;
+        box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+        color: $color-canvas;
+        font-size: 30px;
+        height: 50px;
+        left: 20px;
+        line-height: 1.6em;
+        position: absolute;
+        text-align: center;
+        top: -25px;
+        width: 50px;
+      } // &:before
+
+    } // &[class*="icon-"]
+
+    &.icon-clock:before {
+      @include icon($zmdi-var-alarm-check, $font-material);
+      line-height: 1.6em;
+    } // &.icon-clock:before
+
+    &.icon-heart:before {
+      @include icon($icon-heart-o);
+      line-height: 1.6em;
+    } // &.icon-heart:before
+
+     &.icon-comment:before {
+      @include icon($zmdi-var-comment-text, $font-material);
+      line-height: 1.6em;
+    } // &.icon-comment:before
+
+    &.icon-letter:before {
+      @include icon($zmdi-var-email-open, $font-material);
+      line-height: 1.6em;
+    } // &.icon-letter:before
+
+    &.icon-arrow:before {
+      @include icon($zmdi-var-turning-sign, $font-material);
+      line-height: 1.6em;
+    } // &.icon-arrow:before
+
+    &.icon-pin:before {
+      @include icon($zmdi-var-pin, $font-material);
+      line-height: 1.6em;
+    } // &.icon-arrow:before
+
+    &__title {
+      @include typography(PageHeading5);
+      color: $color-brand;
+      margin: 0 0 10px;
+    } // &__title
+
+    p {
+      @include typography(Shortform);
+    } // p
+
+    li {
+      background: none;
+      border-top: solid 1px $color-keyline;
+      list-style-image: none;
+      list-style-type: none;
+      padding: 5px 0;
+    } // li
+
+    a {
+      color: $color-brand-accent;
+      font-size: 14px;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $color-brand;
+      } // &:hover, &:focus
+
+      &:after {
+        @include icon($icon-angle-double-right);
+        padding-left: 5px;
+      } // &:after
+
+    } // a
+
+  } // .block
+
+} // .region-bottom

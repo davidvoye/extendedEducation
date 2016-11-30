@@ -1,0 +1,214 @@
+//Youth programs
+
+.view-programs {
+  margin-bottom: 110px;
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin-bottom: 80px;
+  } // @media (max-width: breakpoint(large))
+
+  .view-filters {
+
+    form {
+      border-top: 0;
+      box-shadow: none;
+      padding: 0;
+    } // form
+
+    label {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    } // label, hidden on screen, still available for screen readers
+
+    .views-widget label {
+      height: auto;
+      left: auto;
+      position: static;
+      width: auto;
+    } // .views-widget label, overwrite label styles for checkboxes and radio
+
+    .views-exposed-widgets {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      @media (max-width: breakpoint(medium)) {
+        display: block;
+      } // @media (max-width: breakpoint(medium))
+
+      .views-exposed-widget {
+        display: flex;
+        float: none;
+        padding-right: 15px;
+
+        .no-flexbox & {
+          display: inline-block;
+        } // .no-flexbox &
+
+        @media (max-width: breakpoint(large)) {
+          padding-right: 10px;
+        } // @media (max-width: breakpoint(large))
+
+        @media (max-width: breakpoint(medium)) {
+          display: block;
+          padding-bottom: 10px;
+          padding-right: 0;
+        } // @media (max-width: breakpoint(medium))
+
+        &.views-widget-filter-field_tr_location_tid {
+          padding-right: 0;
+        } // &.views-widget-filter-field_tr_location_tid
+
+      } // .views-exposed-widget
+
+      .views-submit-button {
+        display: none;
+      } // .views-submit-button
+
+    } // .views-exposed-widgets
+
+    .form-radios {
+      @include clearfix;
+      display: flex;
+      height: 100%;
+
+      @media (max-width: breakpoint(medium)) {
+        justify-content: center;
+      } // @media (max-width: breakpoint(medium))
+
+      .form-item {
+        float: left;
+
+        &:first-child {
+
+          label {
+            border-radius: 3px 0 0 3px;
+          } // label
+
+        } // &:first-child
+
+        &:last-child {
+
+          label {
+            border-radius: 0 3px 3px 0;
+          } // label
+
+        } // &:last-child
+
+      } // .form-item
+
+      input {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 100%;
+        overflow: hidden;
+
+        &:checked+label {
+          background: $color-brand-accent;
+          color: $color-canvas;
+        } // :checked+label
+
+      } // input
+
+      label {
+        background: $color-canvas;
+        border: solid 1px $color-brand-accent;
+        color: $color-brand-accent;
+        cursor: pointer;
+        height: 100%;
+        position: relative;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        float: left;
+        font-size: 14px;
+        line-height: 1.3em;
+        margin: 0 -1px;
+        padding: 10px 15px;
+        text-align: center;
+
+        @media (max-width: breakpoint(large)) {
+          padding: 10px;
+        } // @media (max-width: breakpoint(large))
+
+      }
+
+    } // .form-radios
+
+  } // .view-filters
+
+  .view-content {
+    background: $color-canvas-alt;
+    border-bottom: solid 1px $color-keyline;
+    border-top: solid 1px $color-keyline;
+    left: 50%;
+    margin: 20px -50vw 0;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+
+    ul {
+      @include clearfix;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 60px auto;
+      max-width: 1080px;
+      padding: 0;
+
+    } // ul
+
+    li {
+      background: none;
+      display: flex;
+      float: left;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+      width: span(4);
+
+      @media (max-width: breakpoint(xsmall)) {
+        width: span(12);
+      } // @media (max-width: breakpoint(large))
+
+    } // li
+
+  } // .view-content
+
+  .pager {
+    margin-top: -55px;
+    position: relative;
+
+    &.pager-load-more a {
+      padding: 10px 20px;
+      background: $color-brand-accent;
+      border: 0;
+      border-radius: 0;
+      color: $color-canvas;
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      text-decoration: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      &:hover,
+      &:focus {
+        background: $color-brand-accent2;
+        color: $color-brand;
+      } // &:hover, &:focus
+
+    } // &.pager-load-more a
+
+  } // pager
+
+} // .view-programs

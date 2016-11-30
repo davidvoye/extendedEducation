@@ -1,0 +1,163 @@
+.program-intro {
+  h1 {
+    font-size: 36px;
+  }
+} // .program-intro 
+
+.program-body {
+  &--item {
+    border-top: 4px solid $color-keyline;
+    padding: 26px 0;
+    position: relative;
+    
+    hr {
+      margin: 0;
+      background-color: $color-keyline;  
+    } // hr
+    
+    h2.program-body--title {
+      position: relative;
+      margin: 0 0 18px 0;
+      padding-left: 42px;
+      font-size: 28px;
+
+      @media (max-width: breakpoint(xsmall)) {
+        font-size: 24px;
+      } 
+
+      &:before {
+        position: absolute;
+        left: 2px;
+        top: -2px;
+        color: $color-brand;
+        font-family: $font-material;
+        font-size: 36px;
+        
+        @media (max-width: breakpoint(xsmall)) {
+          font-size: 32px;
+        } 
+      }   
+    } // h2
+        
+    h3 {
+      font-size: 18px;
+      font-weight: 400;
+      font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+      color: $color-base;
+    } // h3
+    
+    h4 {
+      color: $color-base;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 20px;
+    } // h4
+    
+    &__dp_curriculum {
+      h2 {
+        &:before {
+          @include icon($zmdi-var-assignment, $font-material);
+        } // :before
+      } // h2
+    } // &__curriculum
+    
+    &__program_schedule {
+      h2 {
+        &:before {
+          @include icon($zmdi-var-time, $font-material);
+        } // :before
+      } // h2
+    } // .pane-node-field-program-schedule
+
+    &__program_location_details {
+      h2 {
+        padding-left: 30px;
+        &:before {
+          @include icon($zmdi-var-pin, $font-material);
+        } // :before
+      } // h2
+    } // .pane-node-field-program-location-details
+
+    &__program_parking {
+      h2 {
+        &:before {
+          @include icon($zmdi-var-car, $font-material);
+        } // :before
+      } // h2
+    } // .pane-node-field-program-location-details
+
+    &__program_cost_details {
+      h2 {
+        padding-left: 30px;
+        &:before {
+          @include icon($zmdi-var-money, $font-material);
+        } // :before
+      } // h2
+    } // .pane-node-field-program-cost-details
+
+    &__prog_cancellation_policy {
+      h2 {
+        &:before {
+          @include icon($zmdi-var-alert-octagon, $font-material);
+        } // :before
+      } // h2
+    } // .pane-node-field-prog-cancellation-policy
+
+    &__program_scholarship {
+      h2 {
+        &:before {
+          @include icon($zmdi-var-graduation-cap, $font-material);
+        } // :before
+      } // h2
+    } // .pane-node-field-program-scholarship
+    
+    &__program_registration_link {
+      padding-left: 0;
+      
+      a {
+        @media (max-width: breakpoint(xsmall)) {
+          display: inline-block;
+          width: 100%;    
+          text-align: center;  
+        }    
+      } // a
+    } // &__program_registration_link
+
+  } // &--item
+
+  &--toplink {
+    position: absolute;
+    top: 26px;
+    right: 0;
+    font-size: 14px;
+    
+    @media (max-width: breakpoint(xsmall)) {
+      position: relative;
+      display: block;
+      margin-bottom: 30px;
+      width: 100%;
+      text-align: center;
+    } // @media (max-width: breakpoint(xsmall))
+    
+    a {
+      padding: 5px 0 5px 18px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+      
+      &:before {
+        color: $color-brand-accent;
+        font-family: $font-material;
+        font-size: 16px;
+        position: absolute;
+        left: 0;
+        top: 8px;
+        @include icon($zmdi-var-caret-up-circle, $font-material);
+      } // &:before
+      
+      &:visited {
+        color: $color-brand-accent;
+      } // &:visited
+    } // a
+  } // &--toplink  
+} // .program-body

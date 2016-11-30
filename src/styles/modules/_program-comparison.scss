@@ -1,0 +1,211 @@
+.program-comparison {
+  $block: &;
+  background: $color-canvas-alt;
+  border-bottom: solid 1px $color-keyline;
+  border-top: solid 1px $color-keyline;
+  left: 50%;
+  margin: 140px -50vw 40px;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+
+  &__wrapper {
+    @include clearfix;
+    margin: -40px auto;
+    max-width: 1080px;
+    padding: 0;
+
+    .field-items {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      @media (max-width: breakpoint(xsmall)) {
+        display: block;
+      } // @media (max-width: breakpoint(xsmall))
+
+      .field-item {
+        @include span(4);
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+
+        @media (max-width: breakpoint(xsmall)) {
+          @include span(12);
+        } // @media (max-width: breakpoint(xsmall))
+
+      } // field-item
+
+    } // field-items
+
+  } // &__wrapper
+
+  &__item {
+
+    @media (max-width: breakpoint(xsmall)) {
+      margin-bottom: 70px;
+    } // @media (max-width: breakpoint(xsmall))
+
+    .field-items {
+      display: block;
+
+      .field-item {
+        display: block;
+        float: none;
+        padding: 0;
+        width: 100%;
+      } // field-item
+
+    } // field-items
+
+  } // &__item
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    .paragraphs-items-field-content {
+      flex-grow: 1;
+    }
+
+  } // &__info
+
+  &__image {
+    background-color: transparent;
+    display: block !important; // override some responsive styles
+    margin: -60px 0 20px !important; //override some responsive styles
+    padding: 0;
+
+    img {
+      box-shadow: 0 10px 15px 0 rgba($color-shadow, .2);
+      display: block;
+      width: 100%;
+    } // img
+
+  } // &__image
+
+  &__section {
+    border-top: solid 4px $color-keyline;
+    margin-top: 30px;
+    padding-top: 30px;
+  } // &__section
+
+  &__title {
+    @include typography(PageHeading4);
+    margin: 0 0 20px;
+  } // &__title
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 30px 0 0;
+
+    a {
+      display: block;
+      padding: 10px 20px;
+      background: $color-brand-accent;
+      border: 0;
+      border-radius: 0;
+      color: $color-canvas;
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      line-height: 1.3em;
+      text-decoration: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      text-align: center;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        background: $color-brand-accent2;
+        color: $color-brand;
+      } // &:hover, &:focus
+
+    } // a
+
+  } // &__button
+
+  &__link {
+
+    a {
+      color: $color-brand-accent;
+      font-size: 14px;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $color-brand;
+      } // &:hover, &:focus
+
+      &:after {
+        @include icon($icon-angle-double-right);
+        padding-left: 5px;
+      } // &:after
+
+    } // a
+
+  } // &__link
+
+  h3 {
+    @include typography(PageHeading6);
+    font-weight: $font-weight-bold;
+    margin: 0 0 20px;
+    position: relative;
+
+    &:before {
+      font-size: 48px;
+      left: 0;
+      position: absolute;
+      top: 0;
+    } // &:before
+
+  } // h3
+
+  &__audience {
+
+    h3 {
+      padding: 20px 0 0 55px;
+
+      &:before {
+        @include icon($zmdi-var-accounts, $font-material);
+      } // &:before
+
+    } // h3
+
+  } // &__audience
+
+   &__requirements {
+
+    h3 {
+      padding: 15px 0 0 45px;
+
+      &:before {
+        @include icon($zmdi-var-assignment-check, $font-material);
+      } // &:before
+
+    } // h3
+
+  } // &__requirements
+
+  &__location {
+
+    h3 {
+      padding: 15px 0 0 37px;
+
+      &:before {
+        @include icon($zmdi-var-pin, $font-material);
+      } // &:before
+
+    } // h3
+
+  } // &__location
+
+  p {
+    font-size: 14px;
+  } // p
+
+} // .program-comparison

@@ -1,0 +1,91 @@
+.full-width {
+  $block: &;
+  background: $color-canvas-alt;
+  border-bottom: solid 1px $color-keyline;
+  border-top: solid 1px $color-keyline;
+  margin: 60px -200%;
+  padding: 0;
+
+  @media (max-width: breakpoint(small)) {
+    margin: 60px -20px;
+  } // @media (max-width: breakpoint(small))
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin: 30px -20px;
+  } // @media (max-width: breakpoint(xsmall)
+
+  &--narrow {
+
+    #{$block}__inside {
+      margin: 0 43.34%;
+
+      @media (max-width: breakpoint(small)) {
+        margin: 0 20px;
+      } // @media (max-width: breakpoint(small))
+
+    } // #{$block}__inside
+
+  } // &--narrow
+
+  &--negative-top {
+    margin-top: -60px;
+
+    @media (max-width: breakpoint(small)) {
+      margin: 60px -20px;
+    } // @media (max-width: breakpoint(small))
+
+    @media (max-width: breakpoint(xsmall)) {
+      margin: 30px -20px;
+    } // @media (max-width: breakpoint(xsmall))
+
+    #{$block}__inside {
+      padding-top: 120px;
+
+      @media (max-width: breakpoint(small)) {
+        padding-top: 60px;
+      } // @media (max-width: breakpoint(small))
+
+      @media (max-width: breakpoint(xsmall)) {
+        padding-top: 30px;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // #{$block}__inside
+
+  } // &--negative-top
+
+  &--negative-bottom {
+
+    #{$block}__inside {
+      margin-bottom: -60px;
+      padding-bottom: 0;
+
+      @media (max-width: breakpoint(small)) {
+        margin-bottom: 0;
+        padding-bottom: 60px;
+      } // @media (max-width: breakpoint(small))
+
+      @media (max-width: breakpoint(xsmall)) {
+        padding-bottom: 30px;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // #{$block}__inside
+
+  } // &--negative-bottom
+
+  &__inside {
+    @include clearfix;
+    margin: 0 40%;
+    padding: 60px 0;
+    position: relative;
+
+    @media (max-width: breakpoint(small)) {
+      margin: 0 20px;
+    } // @media (max-width: breakpoint(small))
+
+    @media (max-width: breakpoint(xsmall)) {
+      padding: 30px 0;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // &__inside
+
+} // .full-width

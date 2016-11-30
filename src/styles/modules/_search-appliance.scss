@@ -1,0 +1,55 @@
+.search-google-appliance-search-form {
+  @include clearfix;
+  background: transparent;
+  border-top: 0;
+  box-shadow: none;
+  margin: 0 auto;
+  padding: 0;
+  width: span(6);
+
+  @media (max-width: breakpoint(large)) {
+    width: span(8);
+  } // @media (max-width: breakpoint(large))
+
+ @media (max-width: breakpoint(small)) {
+  width: span(10);
+  } // @media (max-width: breakpoint(small))
+
+  @media (max-width: breakpoint(xsmall)) {
+    width: span(12);
+  } // @media (max-width: breakpoint(xsmall))
+
+  input[type='text'] {
+    background: $color-canvas;
+    border: solid 1px $color-keyline;
+    border-radius: 0;
+    box-shadow: inset 2px 2px 4px 0 rgba($color-shadow, .1);
+    color: $color-brand-accent;
+    float:left;
+    font-size: 15px;
+    padding: 8px;
+    width: 80%;
+
+    @media (max-width: breakpoint(xsmall)) {
+      float: none;
+      width: 100%;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // input
+
+  input[type='submit'] {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 11px 20px;
+    width: 20%;
+
+    @media (max-width: breakpoint(xsmall)) {
+     float: none;
+     margin: 15px 0 0;
+     width: auto;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // input[type='submit']
+
+} // .search-google-appliance-search-form

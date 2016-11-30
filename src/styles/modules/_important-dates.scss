@@ -1,0 +1,40 @@
+.important-dates {
+
+  &__item {
+    @include clearfix;
+    border-bottom: solid 1px $color-canvas;
+    padding: 10px 0;
+  } // &__item
+
+  &__title {
+    float: left;
+    padding-right: 10px;
+    text-align: right;
+    width: 50%;
+
+    @media (max-width: breakpoint(xsmall)) {
+      float: none;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // &__title
+
+  &__date {
+    float: left;
+    font-weight: $font-weight-bold;
+    padding-left: 10px;
+    text-align: left;
+    width: 50%;
+
+    @media (max-width: breakpoint(xsmall)) {
+      float: none;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // &__date
+
+} // .important-dates

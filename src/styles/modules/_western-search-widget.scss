@@ -1,0 +1,21 @@
+.western-search-widget {
+
+  form {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  } // form
+
+  input {
+    width: auto;
+  } //input
+
+  .western-header .western-search & {
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      right: 20px;
+    } // @media (max-width: breakpoint(1 + medium))
+
+  } // .western-header .western-search &
+
+} // .western-search-widget

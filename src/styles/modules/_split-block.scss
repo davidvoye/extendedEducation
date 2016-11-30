@@ -1,0 +1,116 @@
+.split-block {
+  @include clearfix;
+  display: flex;
+
+  @media (max-width: breakpoint(xsmall)) {
+    display: block;
+  } // @media (max-width: breakpoint(xsmall))
+
+  &__left,
+  &__right, {
+    color: $color-canvas;
+    float: left;
+    overflow: hidden;
+    padding: 75px 40px;
+    position: relative;
+    width: span(6);
+
+    @media (max-width: breakpoint(xsmall)) {
+      float: none;
+      padding: 40px;
+      width: 100%;
+    } // @media (max-width: breakpoint(xsmall))
+
+    &:after {
+      background: $color-canvas;
+      content: '';
+      display: block;
+      height: 42px;
+      position: absolute;
+      transform: rotate(45deg);
+      width: 42px;
+      z-index: 1;
+    } // &:after
+
+    &--center {
+      text-align: center;
+    } // &--center
+
+  } // &__left, &__right
+
+  &__left {
+    background: $color-brand-accent;
+
+    &:after {
+      right: -21px;
+      top: -21px;
+
+      @media (max-width: breakpoint(xsmall)) {
+        bottom: -21px;
+        left: -21px;
+        right: auto;
+        top: auto;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // &:after
+
+    a {
+      color: $color-canvas;
+
+      &:focus,
+      &:hover {
+        color: $color-brand-accent2;
+      } // &:hover, &:focus
+
+    } // a
+
+    p {
+     margin-bottom: 1.5em;
+    } // p
+
+  } // &__left
+
+  &__right {
+    background: $color-brand;
+
+    &:after {
+      left: -21px;
+      top: -21px;
+    } // &:after
+
+  } // &__right
+
+  &__title {
+    @include typography(PageHeading3);
+    color: $color-canvas;
+    margin: 0 0 15px;
+  } // &__title
+
+  p,
+  ul,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  blockquote {
+    color: $color-canvas;
+  } // p
+
+  .button {
+    border: solid 1px $color-canvas;
+
+    &:hover,
+    &:focus {
+      background: $color-canvas;
+      color: $color-brand-accent;
+    } // &:hover, &:focus
+
+  } // .button
+
+  li {
+    background-image: url('../../images/bullet-one-alt.svg');
+  } // li
+
+} // .split-block

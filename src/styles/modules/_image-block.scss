@@ -1,0 +1,197 @@
+.image-block {
+  $block: &;
+  @include clearfix;
+  margin: 20px 0;
+
+
+  &__left,
+  &__right {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+
+    @media (max-width: breakpoint(xsmall)) {
+      float: none;
+      width: 100%;
+    } // @media (max-width: breakpoint(xsmall))
+
+    &:after {
+      background: $color-canvas;
+      content: '';
+      display: block;
+      height: 42px;
+      position: absolute;
+      transform: rotate(45deg);
+      width: 42px;
+      z-index: 1;
+    } // &:after
+
+  } // &__left, &__right
+
+  &__left {
+
+    &:after {
+      right: -21px;
+      top: -21px;
+
+      @media (max-width: breakpoint(xsmall)) {
+        bottom: -21px;
+        left: -21px;
+        right: auto;
+        top: auto;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // &:after
+
+  } // &__left
+
+  &__right {
+
+    &:after {
+      left: -21px;
+      top: -21px;
+    } // &:after
+
+  } // &__right
+
+
+  &--3 {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: 37.25%;
+
+      @media (max-width: breakpoint(xsmall)) {
+        display: none;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // &:before
+
+    & > .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      @media (max-width: breakpoint(xsmall)) {
+        position: static;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // & > .content
+
+    #{$block}__left {
+      width: 66.6666%;
+
+      @media (max-width: breakpoint(xsmall)) {
+        width: 100%;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // #{$block}__left
+
+    #{$block}__right {
+      width: 33.3333%;
+
+      @media (max-width: breakpoint(xsmall)) {
+        width: 100%;
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // #{$block}__right
+
+  } // &--3
+
+
+  &--3,
+  &--4 {
+
+    #{$block}__left,
+    #{$block}__right {
+
+      &:after {
+
+        @media (max-width: breakpoint(xsmall)) {
+          display: none;
+        } // @media (max-width: breakpoint(xsmall))
+
+      } // &:after
+
+    } // #{$block}__left, #{$block}__right
+
+    figure {
+
+      @media (max-width: breakpoint(xsmall)) {
+        overflow: hidden;
+        position: relative;
+
+        &:before,
+        &:after {
+          background: $color-canvas;
+          content: '';
+          display: block;
+          height: 42px;
+          left: -21px;
+          position: absolute;
+          transform: rotate(45deg);
+          width: 42px;
+          z-index: 1;
+        } // &:after
+
+        &:before {
+          top: -21px;
+        } // &:before
+
+        &:after {
+          bottom: -21px;
+        } // &:after
+
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // figure
+
+    #{$block}__left {
+
+      @media (max-width: breakpoint(xsmall)) {
+
+        figure:first-of-type:before {
+          display: none;
+        } // figure:first-of-type:before
+
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // #{$block}__left
+
+    #{$block}__right {
+
+      @media (max-width: breakpoint(xsmall)) {
+
+        figure:last-of-type:after {
+          display: none;
+        } // figure:first-of-type:before
+
+      } // @media (max-width: breakpoint(xsmall))
+
+    } // #{$block}__right
+
+  } // &--3, &--4
+
+
+  figure {
+    background-color: transparent;
+    box-shadow: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+  } // figure
+
+
+  img {
+    display: block;
+    width: 100%;
+  } // img
+
+} // .image-block

@@ -1,0 +1,124 @@
+.view-degree-programs {
+  background: $color-canvas-alt;
+  background-image: url('../../images/degree-programs.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-bottom: solid 1px $color-keyline;
+  border-top: solid 1px $color-keyline;
+  left: 50%;
+  margin: 60px -50vw 80px;
+  padding-top: 60px;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+
+  @media (max-width: breakpoint(xsmall)) {
+    background-image: none;
+     margin: 30px -50vw;
+    padding-top: 30px;
+  } // @media (max-width: breakpoint(xsmall))
+
+  .view-header,
+  .view-content {
+    @include clearfix;
+    margin: 0 auto;
+    max-width: 1080px;
+    padding: 0 10px;
+  } // .view-header, .view-content
+
+  .view-header {
+    margin-bottom: 60px;
+    margin-top: 30px;
+    max-width: 680px;
+
+    @media (max-width: breakpoint(small)) {
+      margin-top: 0;
+    } // @media (max-width: breakpoint(small))
+
+    @media (max-width: breakpoint(xsmall)) {
+      margin-bottom: 30px;
+    } // @media (max-width: breakpoint(xsmall))
+
+    p:last-of-type {
+      margin-bottom: 0;
+    } // p:last-of-type
+
+  } // .view-header
+
+  .pager {
+    @include clearfix;
+    margin: 30px 0;
+
+    li {
+      width: 100%;
+    } // li
+
+    &.pager-load-more a {
+      padding: 10px 20px;
+      background: $color-brand-accent;
+      border: 0;
+      border-radius: 0;
+      color: $color-canvas;
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      text-decoration: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      &:hover,
+      &:focus {
+        background: $color-brand-accent2;
+        color: $color-brand;
+      } // &:hover, &:focus
+
+    } // &.pager-load-more a
+
+  } // .pager
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -10px;
+    padding: 0;
+
+    @media (max-width: breakpoint(xsmall)) {
+      margin: 0 -10px 30px;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // ul
+
+  li {
+    background: none;
+    display: flex;
+    float: left;
+    margin-bottom: 20px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    width: span(4);
+
+    @media (max-width: breakpoint(xsmall)) {
+      width: span(12);
+    } // @media (max-width: breakpoint(large))
+
+  } // li
+
+  &-other {
+    margin: 60px auto;
+    width: span(8);
+
+    @media (max-width: breakpoint(medium)) {
+      width: 100%;
+    } // @media (max-width: breakpoint(medium))
+
+    li {
+      background: none;
+      padding-left: 0;
+    } // li
+
+  } // &-other
+
+} // .view-degree-programs

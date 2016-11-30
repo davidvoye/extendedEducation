@@ -1,0 +1,41 @@
+header[role="banner"] {
+  @include clearfix;
+  background: $color-brand;
+  height: 360px;
+  padding-top: 0;
+  position: relative;
+
+  .front & {
+    height: 740px;
+  } // .front &
+
+  @media (max-width: breakpoint(medium)) {
+    height: auto;
+
+    .front & {
+      background: $color-keyline-alt;
+      height: auto;
+    } // .front &
+
+  } // @media (max-width: breakpoint(medium))
+
+  > div {
+    max-height: 100%;
+  } // &[role="banner"] > div
+
+  .main-nav {
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      bottom: 0;
+      left: 50%;
+      max-width: 1080px;
+      padding: 0 10px;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 100%;
+      z-index: 2;
+    } // @media (max-width: breakpoint(1 + medium))
+
+  } // .main-nav
+
+} // header

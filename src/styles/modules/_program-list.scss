@@ -1,0 +1,217 @@
+.program-list {
+  $block: &;
+  background: $color-canvas;
+  border-top: solid 6px $color-keyline;
+  box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+
+  &__title,
+  &__title h2,
+  &__title h3 {
+    @include typography(PageHeading4);
+    margin-top: 0;
+
+    a {
+      color: $color-brand-accent;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $color-brand;
+      } // &:hover, &:focus
+
+    } // a
+
+  } // &__title, &__title h3
+
+  &__description {
+    @include typography(Shortform);
+    flex-grow: 1;
+
+    p {
+      @include typography(Shortform);
+    } // p
+
+  } // &__description
+
+  &__locations {
+    @include typography(Shortform);
+    border-top: solid 1px $color-keyline;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 30px;
+    position: relative;
+
+    &:before {
+      @include icon($zmdi-var-pin, $font-material);
+      display:block;
+      font-size: 18px;
+      left: 0;
+      padding-right: 5px;
+      position: absolute;
+      text-align: center;
+      top: 10px;
+      width: 30px;
+    } // &:before
+
+  } // &__locations
+
+  &__online,
+  &__face-to-face,
+  &__hybrid {
+    @include typography(Shortform);
+    padding-top: 5px;
+    padding-left: 30px;
+    position: relative;
+
+    &:before {
+      @include icon($zmdi-var-laptop, $font-material);
+      display:block;
+      font-size: 18px;
+      left: 0;
+      padding-right: 5px;
+      position: absolute;
+      text-align: center;
+      top: 6px;
+      width: 30px;
+    } // &:before
+
+  } // &__online
+
+  &__face-to-face:before {
+    @include icon($zmdi-var-accounts, $font-material);
+  } // &__face-to-face:before
+
+  &__hybrid {
+    padding-left: 50px;
+
+    &:after {
+      @include icon($zmdi-var-accounts-add, $font-material);
+      display:block;
+      font-size: 18px;
+      left: 20px;
+      padding-right: 5px;
+      position: absolute;
+      text-align: center;
+      top: 7px;
+      width: 30px;
+    } // &:after
+
+  } // &__hybrid
+
+  &__link {
+    padding-top: 10px;
+
+    a {
+      color: $color-brand-accent;
+      font-size: 14px;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $color-brand;
+      } // &:hover, &:focus
+
+      &:after {
+        @include icon($icon-angle-double-right);
+        padding-left: 5px;
+      } // &:after
+
+    } // a
+
+  } // &__link
+
+  &__type {
+    font-size: 13px;
+    font-style: italic;
+    font-weight: $font-weight-normal;
+    line-height: 1em;
+    margin: -10px 0 20px;
+    padding-left: 24px;
+    position: relative;
+
+    &:before {
+      background: $color-brand-accent;
+      content: '';
+      display: block;
+      height: 29px;
+      left: 0;
+      position: absolute;
+      top: -16px;
+      width: 14px;
+
+      .language-amp-culture-programs & {
+        background: $color-program-2;
+      } // .language-amp-culture-programs &
+
+      .certificate-programs & {
+        background: $color-program-5;
+      } // .certificate-programs &
+
+      .community-programs & {
+        background: $color-program-4;
+      } // .community-programs &
+
+      .professional-programs & {
+        background: $color-program-6;
+      } // .professional-programs &
+
+    } // &:before
+
+  } // &__type
+
+  &--other {
+    background: none;
+    box-shadow: none;
+    padding-top: 30px;
+    position: relative;
+
+    &:before {
+      background: $color-program-1;
+      content: '';
+      display: content;
+      height: 27px;
+      left: 20px;
+      position: absolute;
+      top: -6px;
+      width: 14px;
+
+      .summer-session &,
+      .grad-school-prep & {
+        background: $color-program-3;
+      } // .summer-session &
+
+      .study-usa-courses &,
+      .faculty-led-usa-learning-programs &,
+      .faculty-led-study-usa-learning-programs & {
+        background: $color-program-2;
+      } // .study-usa-courses &, .faculty-led-usa-learning-programs &, .faculty-led-study-usa-learning-programs &
+
+      .teach-english & {
+        background: $color-program-4;
+      } // .teach-english &
+
+      .certificate-programs & {
+        background: $color-program-5;
+      } // .certificate-programs &
+
+      .viking-launch & {
+        background: $color-program-6;
+      } // .viking-launch &
+
+    } // &:before
+
+    #{$block}__title,
+    #{$block}__title h2,
+    #{$block}__title h3 {
+      @include typography(PageHeading2);
+    } // #{$block}__title
+
+  } // &--other
+
+} // .program-list

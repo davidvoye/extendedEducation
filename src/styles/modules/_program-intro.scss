@@ -1,0 +1,16 @@
+.program-intro {
+
+  img {
+    display: block;
+  } // img
+
+  h2 {
+    margin-top: 50px;
+
+    @media (max-width: breakpoint(xsmall)) {
+      margin-top: 25px;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // h2
+
+} // .program-intro

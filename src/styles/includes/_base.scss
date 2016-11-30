@@ -1,0 +1,420 @@
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  background: $color-canvas;
+  color: $color-base;
+  font-family: $font-base;
+  font-weight: $font-weight-light;
+}
+
+main {
+  background: $color-canvas;
+  filter: none; //ie fix
+  margin: 40px 0 60px;
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin: 20px 0 30px;
+  } // @media (max-width: breakpoint(xsmall))
+
+  .front & {
+    background: transparent;
+    margin-bottom: 160px;
+    margin-top: 0;
+    padding-top: 0;
+
+    @media (max-width: breakpoint(xsmall)) {
+      margin-bottom: 60px;
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // .front &
+
+}
+
+section {
+  @include clearfix;
+}
+
+h1,
+.pageheading1 {
+  @include typography(PageHeading1);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h2,
+.pageheading2 {
+  @include typography(PageHeading2);
+}
+
+h3,
+.pageheading3 {
+  @include typography(PageHeading3);
+}
+
+h4,
+.pageheading4 {
+  @include typography(PageHeading4);
+}
+
+h5,
+.pageheading5 {
+  @include typography(PageHeading5);
+}
+
+h6,
+.pageheading6 {
+  @include typography(PageHeading6);
+}
+
+.intro {
+  @include typography(Intro);
+}
+
+p,
+li,
+.longform {
+  @include typography(Longform);
+}
+
+.shortform {
+  @include typography(Shortform);
+}
+
+.small {
+  @include typography(SmallText);
+}
+
+// Not sure if we really need this...
+// p,
+// ul,
+// ol {
+
+//   &:first-of-type {
+//     margin-top: 0; // This is because of normalize. If you Meyer you have it anyway.
+//   }
+
+//   &:last-of-type {
+//     margin-bottom: 0; // This is because of normalize. If you Meyer you have it anyway.
+//   }
+
+// }
+
+
+a {
+  color: $color-brand-accent;
+  text-decoration: underline;
+
+  &:focus,
+  &:hover {
+    color: $color-brand;
+  }
+
+
+  &:visited {
+    color: $color-base-alt;
+  }
+
+}
+
+hr {
+  background: $color-keyline;
+  border: 0;
+  height: 1px;
+  margin: 50px 0;
+
+  &.hr--wide {
+    height: 4px;
+  }
+
+  &.hr--ee {
+    background: url('../../images/EE.svg') no-repeat center;
+    height: 30px;
+    margin: 60px 0;
+
+    &:before,
+    &:after {
+      background: $color-keyline;
+      content: '';
+      display: block;
+      float: left;
+      height: 3px;
+      margin-top: 12px;
+      width: 45%;
+
+      @media (max-width: breakpoint(xsmall)) {
+        width: 40%;
+      } // @media (max-width: breakpoint(xsmall))
+
+    }
+
+     &:after {
+      float: right;
+    }
+
+  }
+
+}
+
+
+ul {
+  padding: 0;
+
+  & > li {
+    background: url('../../images/bullet-one.svg') no-repeat 0 .6em;
+    line-height: 1.5em;
+    list-style: none;
+    padding: 0 0 5px 20px;
+
+    .item-list & {
+      background: none;
+    }
+
+  }
+
+  ul > li {
+    background: url('../../images/bullet-two.svg') no-repeat 0 10px;
+
+    ul > li {
+      background: url('../../images/bullet-three.svg') no-repeat 0 14px;
+    }
+
+  }
+
+  &.contextual-links > li {
+    background: none;
+  }
+
+  &.primary > li {
+    padding: 0;
+  } // &.primary > li
+
+  main & {
+    margin: 1em 0;
+  } // main &
+
+}
+
+
+ol {
+  counter-reset: ol-counter;
+  list-style: none;
+  padding: 0;
+
+  & > li {
+    padding: 0 0 5px 30px;
+    position: relative;
+
+    &:before {
+      content: counter(ol-counter, decimal)".";
+      counter-increment: ol-counter;
+      display: inline-block;
+      font-weight: $font-weight-bold;
+      left: 0;
+      min-width: 20px;
+      position: absolute;
+      top: 0;
+      text-align: right;
+    }
+  }
+
+  ol {
+    padding: 5px 0 5px;
+
+    & > li:before {
+      content: counter(ol-counter, lower-alpha)".";
+    }
+
+    ol > li {
+      padding-left: 35px;
+
+      &:before {
+        content: counter(ol-counter, lower-roman)".";
+        min-width: 30px;
+      }
+
+    }
+
+  }
+
+  main & {
+    margin: 1em 0;
+  } // main &
+
+}
+
+
+table {
+  border: solid 3px $color-keyline;
+  border-collapse: initial;
+  border-radius: 4px;
+  width: 100% !important; // important is there to get right of WYSIWYG inline width
+
+  @media (max-width: breakpoint(xsmall)) {
+    display: inline-block;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    vertical-align: top;
+    white-space: nowrap;
+  } // @media (max-width: breakpoint())
+
+  h3 {
+    @include typography(PageHeading5);
+    color: $color-base;
+    margin: 0;
+  }
+
+  tr {
+
+    &:nth-of-type(odd) {
+      background: none;
+    } //  &:nth-of-type(odd)
+
+  } // tr
+
+  th,
+  td {
+    border-bottom: solid 1px $color-keyline;
+    border-left: 0;
+    border-right: solid 1px $color-keyline;
+    border-top: 0;
+    vertical-align: top;
+
+    @media (max-width: breakpoint(xsmall)) {
+      width: 100%;
+    } // @media (max-width: breakpoint(xsmall)) {
+
+    &:last-child {
+      border-right: 0;
+    } // &:last-child
+
+  }
+
+  th {
+    background: $color-canvas-alt;
+    font-weight: $font-weight-medium;
+  }
+
+  hr {
+    margin: 10px -10px;
+  }
+
+  &.alt {
+
+    tbody tr {
+
+      &:nth-of-type(even) {
+        background: $color-canvas-alt;
+      } // &:nth-of-type(even)
+
+    } // tr
+
+  } // &.alt
+
+  &.simple {
+    border: 0;
+
+    @media (max-width: breakpoint(xsmall)) {
+      display: block;
+      overflow-x: hidden;
+      white-space: normal;
+    } // @media (max-width: breakpoint())
+
+    th,
+    td {
+      background: $color-canvas;
+      border-right: 0;
+
+      @media (max-width: breakpoint(xsmall)) {
+        display: inline-block;
+        width: 100%;
+      }
+
+    }
+
+    tr:last-child {
+      th,
+      td {
+        border: 0;
+      }
+    }
+
+    th {
+
+      @media (max-width: breakpoint(xsmall)) {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+    }
+
+    td {
+
+      @media (max-width: breakpoint(xsmall)) {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        text-align: right;
+
+        @media (max-width: breakpoint(xsmall)) {
+          text-align: left;
+        }
+
+      }
+
+    }
+
+  } // &.simple
+
+  &.course-list {
+    border: 0;
+
+    tbody {
+
+      tr:nth-of-type(even) {
+        background: $color-canvas-alt;
+      }
+
+    }
+
+    th {
+      background: $color-canvas;
+      border-bottom: solid 2px $color-keyline;
+    }
+
+    tr {
+
+      &:last-child {
+
+        th,
+        td {
+          border: 0;
+        }
+
+      }
+
+    }
+
+    th,
+    td {
+      border-right: 0;
+
+      &:last-child {
+        text-align: right;
+      }
+
+    }
+
+  } // &.course-list
+
+} // table

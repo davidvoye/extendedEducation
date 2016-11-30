@@ -1,0 +1,131 @@
+.western-header {
+
+  @media (min-width: 1 + breakpoint(medium)) {
+    top: -6px;
+  } // @media (max-width: breakpoint(1 + medium))
+
+  nav {
+    background: $color-program-1;
+    z-index: 5;
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      background: rgba($color-canvas, .85);
+      margin: 6px 0 0;
+      position: static;
+    } // @media (max-width: breakpoint(1 + medium))
+
+  } // nav
+
+  .western-logo {
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      z-index: 2;
+    } // @media (max-width: breakpoint(1 + medium))
+
+    a {
+      box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+      position: relative;
+      z-index: 2;
+
+      @media (min-width: 1 + breakpoint(medium)) {
+        box-shadow: none;
+        height: 140px;
+        left: -10px;
+        position: absolute;
+      }
+
+      @media (max-width: breakpoint(medium)) {
+        background-position-y: 10px;
+        background-size: 320px;
+        height: 94px;
+      }
+
+      @media (max-width: breakpoint(xxsmall)) {
+        background-position-y: 20px;
+        background-size: 275px;
+      }
+
+    }
+
+  } // .western-logo
+
+  .western-search {
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      float: right;
+    } // @media (max-width: breakpoint(1 + medium))
+
+    >button {
+
+      @media (max-width: breakpoint(medium)) {
+        background: url('../../../wwuzen/images/icons/search.png') no-repeat;
+        background-position: 0 0;
+        background-size: cover;
+      } // @media (mmax-width: breakpoint(medium))
+
+    } // >button
+
+  } // .western-search
+
+  .western-quick-links {
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      position: absolute;
+      right: 65px;
+    } // @media (max-width: breakpoint(1 + medium))
+
+    @media (max-width: breakpoint(medium)) {
+
+      ul {
+        right: 62px;
+      } // ul
+
+      button {
+        background: none;
+        padding: 0;
+        text-indent: 0;
+        font-size: 0;
+
+        &:before {
+          @include icon($zmdi-var-more, $font-material);
+          color: $color-canvas;
+          display: block;
+          font-size: 35px;
+        } // &:before
+
+      } // button
+
+    } // @media (max-width: breakpoint(medium))
+
+  } // .western-quick-links
+
+  .mobile-main-nav {
+
+    @media (max-width: breakpoint(medium)) {
+      background: none;
+        padding: 0;
+        text-indent: 0;
+        font-size: 0;
+
+        &:before {
+          @include icon($zmdi-var-menu, $font-material);
+          color: $color-canvas;
+          display: block;
+          font-size: 30px;
+        } // &:before
+
+    } // @media (max-width: breakpoint(medium))
+
+  } // .mobile-main-nav
+
+  .l-container {
+    position: relative;
+    padding: 0 10px 0 0;
+
+    @media (max-width: breakpoint(medium)) {
+      padding: 0;
+    } // @media (max-width: breakpoint(medium))
+
+  } // .l-container
+
+} // .western-header

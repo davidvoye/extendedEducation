@@ -1,0 +1,67 @@
+.slider-block {
+  @include clearfix;
+  margin: 20px 0 100px;
+  position: relative;
+
+  &__content {
+    background: $color-canvas;
+    bottom: 30px;
+    box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 30%;
+    z-index: 3;
+
+    @media (max-width: breakpoint(large)) {
+      width: 35%;
+    } // @media (max-width breakpoint(large))
+
+    @media (max-width: breakpoint(medium)) {
+      position: static;
+      width: 100%;
+    } // @media (max-width breakpoint(medium))
+
+    .wwu-75-percent-right-column & {
+      width: 35%;
+
+      @media (max-width: breakpoint(large)) {
+        position: static;
+        width: 100%;
+      } // @media (max-width breakpoint(large))
+
+    } // .wwu-75-percent-right-column &
+
+    p {
+      @include typography(Shortform);
+    } // p
+
+  } // &__content
+
+  &__title {
+    @include typography(PageHeading4);
+    color: $color-brand-accent;
+    margin: 0 0 15px;
+  } // &__title
+
+  .flexslider {
+    margin: 0;
+    width: 75%;
+
+    @media (max-width: breakpoint(medium)) {
+      position: static;
+      width: 100%;
+    } // @media (max-width breakpoint(medium))
+
+    .wwu-75-percent-right-column & {
+
+      @media (max-width: breakpoint(large)) {
+        width: 100%;
+      } // @media (max-width breakpoint(large))
+
+    } // .wwu-75-percent-right-column &
+
+  } // .flexslider
+
+} // .slider-block

@@ -1,0 +1,91 @@
+.site-header {
+  width: 100%;
+
+  @media (max-width: breakpoint(medium)) {
+    height: 240px;
+    position: relative;
+  } // @media (max-width: breakpoint(medium))
+
+  .site-banner {
+    display: block;
+    max-height: none;
+
+    img {
+      display: block;
+      height: 360px;
+      object-fit: cover;
+      opacity: .2;
+      width: 100%;
+
+      .front & {
+        height: 740px;
+        opacity: 1;
+      } // .front &
+
+      @media (max-width: breakpoint(medium)) {
+        height: 240px;
+
+        .front & {
+          height: 240px;
+        } // .front &
+
+      } // @media (max-width: breakpoint(medium))
+
+    } // img
+
+  } // .site-banner
+
+  .site-name {
+    background: transparent;
+    bottom: auto;
+    position: absolute;
+    right: auto;
+    text-align: center;
+    text-transform: none;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 2;
+
+    @media (min-width: 1 + breakpoint(medium)) {
+      left: 50%;
+      max-width: 565px;
+      min-height: auto;
+      min-width: auto;
+      padding-bottom: 0;
+      padding-top: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    } // @media (max-width: breakpoint(1 + medium))
+
+    @media (max-width: breakpoint(large)) and (min-width: breakpoint(medium)) {
+      margin: 0;
+      max-width: 325px;
+    } // mq
+
+    h2 {
+      @include typography(PageHeading1);
+      color: $color-canvas;
+      margin: 0 0 15px;
+
+      @media (max-width: breakpoint(medium)) {
+        font-size: 36px;
+      } // @media (max-width: breakpoint(medium))
+
+    } // h2
+
+    p {
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+      text-align: center;
+      width: 100%;
+    } // p
+
+    a {
+      color: $color-canvas;
+      text-decoration: none;
+    }
+
+  } // .site-name
+
+} // .site-header

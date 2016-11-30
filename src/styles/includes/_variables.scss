@@ -1,0 +1,79 @@
+// Fonts
+$font-default_stack-serif: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$font-default_stack-sans_serif: Tahoma,Verdana,"DejaVu Sans",sans-serif;
+$font-icon: 'FontAwesome' !default;
+$font-material: 'Material-Design-Iconic-Font' !default;
+$font-fontello: 'fontello' !default;
+
+$font-base: Muli, $font-default_stack-sans_serif;
+
+// Font weights
+
+$font-weight-light: 300;
+$font-weight-medium: 400;
+$font-weight-normal: $font-weight-medium;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Font sizes
+$font-size-body: 15;
+
+// Colours
+$color-base: #222;
+$color-base-alt: #424242;
+$color-base-alt2: #999;
+$color-brand: #003f87;
+$color-brand-accent: #0070b6;
+$color-brand-accent2: #bad80a;
+$color-canvas: #fff;
+$color-canvas-alt: #fafafa;
+$color-canvas-alt2: #ddd;
+$color-keyline: #dedddd;
+$color-keyline-alt: #eee;
+$color-shadow: #000;
+
+//Colours for the tabs on the list of programs
+$color-program-1: #0083d6;
+$color-program-2: #cc2d30;
+$color-program-3: #ffc61e;
+$color-program-4: $color-brand-accent2;
+$color-program-5: #006b3f;
+$color-program-6: $color-brand;
+
+$color-state-error: $color-program-2;
+$color-state-success: #108574;
+$color-state-warning: #f7ca18;
+$color-state-info: $color-program-1;
+$color-state-error-background: #f64747;
+
+// Sass maps for program color loop in _content-block.scss
+$color-program: (
+  1: $color-program-1,
+  2: $color-program-2,
+  3: $color-program-3,
+  4: $color-program-4,
+  5: $color-program-5,
+  6: $color-program-6,
+);
+
+// Breakpoints
+$breakpoints: (
+  xxlarge: 1200px,
+  xlarge: 1080px,
+  large: 1024px,
+  medium: 800px,
+  small : 767px,
+  xsmall: 550px,
+  xxsmall: 360px
+);
+
+// Vertical Spacing Units
+// Used by the _vertical-spacing.scss module
+$space-unit: 15px;
+$space-unit-mid: 8px;
+
+
+//Grid/Susy Gutters
+$gutter-body: 40px;
+$gutter-column: 20px;
+$column-count: 12;

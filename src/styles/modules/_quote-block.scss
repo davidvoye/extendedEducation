@@ -1,0 +1,107 @@
+.quote-block {
+  background: $color-program-5;
+  color: $color-canvas;
+  margin: 140px -200% 80px;
+  padding: 0;
+
+  @media (max-width: breakpoint(small)) {
+    margin: 140px -20px 80px;
+  } // @media (max-width: breakpoint(small))
+
+  &__inside {
+    margin: 0 40%;
+    padding: 100px 0;
+    position: relative;
+
+    @media (max-width: breakpoint(small)) {
+      margin: 0 20px;
+    } // @media (max-width: breakpoint(small))
+
+    &:before,
+    &:after {
+      background: url('../../images/quotes.svg') no-repeat;
+      background-size: 100%;
+      content: '';
+      height: 355px;
+      opacity: .05;
+      position: absolute;
+      width: 420px;
+
+      @media (max-width: breakpoint(small)) {
+        width: 50%;
+      } // @media (max-width: breakpoint(small))
+
+    } // &:before, &:after
+
+    &:before {
+      left: 0;
+      top: -100px;
+
+      @media (max-width: breakpoint(small)) {
+        top: -10%;
+      } // @media (max-width: breakpoint(small))
+
+    } // &:before
+
+    &:after {
+      bottom: -100px;
+      right: 0;
+      transform: rotate(180deg);
+
+      @media (max-width: breakpoint(small)) {
+        bottom: -10%;
+      } // @media (max-width: breakpoint(small))
+
+    } // &:after
+
+  } // &__inside
+
+  &__student {
+    background: transparent;
+    box-shadow: none;
+    color: $color-canvas;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top: -80px;
+    text-align: center;
+    width: 100%;
+
+    img {
+      border: solid 10px $color-canvas;
+      border-radius: 50%;
+      display: block;
+      height: 170px;
+      width: 170px;
+    } // img
+
+    figcaption {
+      color: $color-canvas;
+      font-size: 14px;
+      font-style: normal;
+      line-height: 1.5;
+      margin-top: 5px;
+    } // figcaption
+
+  } // &__student
+
+  blockquote {
+    background: transparent;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.3em;
+    margin: 80px auto 0 !important; // override some styles from another theme
+    max-width: none;
+    padding: 0;
+    text-align: center;
+    width: span(8);
+
+    @media (max-width: breakpoint(xsmall)) {
+      width: span(12) !important; // override some styles from another theme
+    } // @media (max-width: breakpoint(xsmall))
+
+  } // blockquote
+
+} // .quote-block

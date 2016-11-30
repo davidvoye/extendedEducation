@@ -1,0 +1,33 @@
+/*
+  Layout goes in this file. Susy setup should go here too.
+	Layout classes should be prefixed `.l-`
+*/
+
+$susy: (
+  columns: $column-count,
+  use-custom: (rem:true),
+  global-box-sizing: border-box,
+  gutter-position: inside-static,
+  column-width: 96px,
+  gutters: $gutter-column/96px,
+  // debug: (
+  //   image: show-columns,
+  //   output: overlay,
+  //   toggle: bottom left,
+  // )
+);
+
+.l-container {
+  @include clearfix;
+  @include container(1080px);
+  padding: 0 20px;
+  .no-mediaqueries & {
+    min-width: breakpoint(no-mediaqueries);
+  }
+}
+
+.pane-node-title {
+  h2 {
+    margin-top: 0;
+  } // h2
+} // .pane-node-title

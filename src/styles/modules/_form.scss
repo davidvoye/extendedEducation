@@ -1,0 +1,240 @@
+// Base Elements + Webform Overrides
+.webform-progressbar {
+  padding-bottom: 2em;
+  
+  &-inner {
+    background-color: $color-brand-accent;
+  } 
+  
+  &-outer {
+    border-color: $color-brand-accent;
+  } 
+  
+  &-page {
+    border-color: $color-brand-accent;
+    
+    &.current {
+      background-color: $color-brand;
+    }
+    &.completed {
+      background-color: $color-brand-accent;
+    }    
+  }
+}
+
+form {
+  background: $color-canvas;
+  border-top: solid 5px $color-keyline;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0 , .2);
+  padding: 30px;
+} // form
+
+fieldset {
+  @include clearfix;
+  border: 0;
+  margin: 0 0 20px;
+  padding: 0;
+} // fieldset
+
+legend {
+  @include typography(PageHeading5);
+  color: $color-brand;
+  margin: 0 0 15px;
+} // legend
+
+label {
+  font-weight: $font-weight-medium;
+  margin: 0 0 5px;
+} // label
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+select,
+textarea,
+.form-item .form-text {
+  background: $color-canvas-alt;
+  border: solid 1px $color-brand-accent;
+  border-radius: 2px;
+  color: $color-base;
+  font-size: 16px;
+  padding: 7px;
+  width: 100%;
+
+  &:focus {
+    border-color: $color-brand;
+    outline: none;
+  } // &:focus
+
+} // input, select, textarea, .form-item .form-text
+
+.form {
+  $block: &;
+
+  &-item {
+    margin: 0 0 15px;
+  } // &-item
+
+  &__group {
+
+    &--50 {
+      float: left;
+      width: 50%;
+
+      @media (max-width: breakpoint(xsmall)) {
+        float: none;
+        width: 100%;
+      } // @media (max-width: breakpoint(xsmall))
+
+      &:nth-of-type(odd) {
+        padding-right: 10px;
+
+        @media (max-width: breakpoint(xsmall)) {
+          padding-right: 0;
+        } // @media (max-width: breakpoint(xsmall))
+
+         &#{$block}__select {
+
+          &:after {
+            right: 20px;
+
+            @media (max-width: breakpoint(xsmall)) {
+              right: 10px;
+            } // @media (max-width: breakpoint(xsmall))
+
+          } // &:after
+
+        } // &#{$block}__select
+
+      } // &:nth-of-type(odd)
+
+      &:nth-of-type(even) {
+        padding-left: 10px;
+
+        @media (max-width: breakpoint(xsmall)) {
+          padding-left: 0;
+        } // @media (max-width: breakpoint(xsmall))
+
+        &#{$block}__email,
+        &#{$block}__telephone {
+
+          &:before {
+            left: 20px;
+
+            @media (max-width: breakpoint(xsmall)) {
+              left: 10px;
+            } // @media (max-width: breakpoint(xsmall))
+
+          } // &:before
+
+        } // &#{$block}__email, &#{$block}__telephone
+
+      } // &:nth-of-type(even)
+
+    } // &--50
+
+  } // &__group
+
+  &__select {
+    position: relative;
+
+    &:after {
+      @include icon($zmdi-var-caret-down, $font-material);
+      bottom: 8px;
+      display: block;
+      font-size: 25px;
+      position: absolute;
+      right: 10px;
+
+      .ie & {
+        display: none;
+      } // .ie &
+
+    } // &:after
+
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    } // select
+
+  } // &__select
+
+  &__email,
+  &__telephone {
+    position: relative;
+
+    &:before {
+      bottom: 10px;
+      color: $color-base-alt2;
+      display: block;
+      font-size: 18px;
+      left: 10px;
+      position: absolute;
+    } // &:before
+
+    input,
+    .form-text {
+      padding-left: 30px;
+    } // input, .form-text
+
+  } // &__email, &__telephone
+
+  &__email:before {
+    @include icon($zmdi-var-email, $font-material);
+  } // &__email:before
+
+  &__telephone:before {
+    @include icon($zmdi-var-phone, $font-material);
+  } // &__telephone:before
+
+  &__radio,
+  &__checkbox {
+    padding: 0 0 0 20px;
+    position: relative;
+
+    input {
+      height: 1px;
+      left: -10000px;
+      overflow: hidden;
+      position: absolute;
+      top: auto;
+      width: 1px;
+
+      &+label {
+        position: relative;
+        
+        &:before {
+          @include icon($zmdi-var-circle-o, $font-material);
+          display: block;
+          font-size: 16px;
+          height: 20px;
+          left: -20px;
+          position: absolute;
+          top: 5px;
+          width: 20px;
+        } // &:before
+
+      } // label
+      
+      &:checked+label:before {
+        @include icon($zmdi-var-dot-circle, $font-material);
+      } // &:checked+label:before
+
+    } // input
+
+  } // &__radio
+
+  &__checkbox {
+
+    input:checked+label:before {
+      @include icon($zmdi-var-check-square, $font-material);
+    }
+
+    input+label:before {
+      @include icon($zmdi-var-square-o, $font-material);
+    }
+
+  }
+
+} // .form
