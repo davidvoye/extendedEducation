@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function(grunt) {
 
+  require('es6-promise').polyfill();
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
