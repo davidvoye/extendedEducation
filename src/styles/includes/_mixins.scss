@@ -123,3 +123,14 @@
   column-count: $count;
   column-gap: $gap;
 }
+
+@mixin western-glyph($content-code, $size:150%) {
+  font-family: entyporegular,sans-serif;
+  font-size: $size;
+  color: #0083d6;
+  content: $content-code;
+  position: relative;
+  top: 4px;
+  margin-right: .2em;
+}
+

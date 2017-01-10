@@ -8444,6 +8444,124 @@ header[role="banner"] > .front-banner {
   }
 }
 
+.wwu-75-percent-left-column {
+  width: 75%;
+  display: inline-block;
+}
+
+@media screen and (max-width: 800px) {
+  .wwu-75-percent-left-column {
+    width: 100%;
+  }
+}
+
+.wwu-75-percent-left-column .pane-user-field-your-photo {
+  float: left;
+  margin: 0 1.2em 1.2em 0;
+  background: #fff;
+}
+
+@media screen and (max-width: 550px) {
+  .wwu-75-percent-left-column .pane-user-field-your-photo {
+    float: none;
+  }
+}
+
+.wwu-75-percent-left-column .pane-user-field-your-photo img {
+  box-shadow: #ddd 0 0 7px 3px;
+  padding: 10px;
+}
+
+.wwu-75-percent-left-column .field-name-field-academic-title {
+  color: #003f87;
+  font-size: 1.4em;
+  margin-top: 0;
+}
+
+.wwu-75-percent-left-column .field-name-field-phone-number::before {
+  font-family: entyporegular,sans-serif;
+  font-size: 150%;
+  color: #0083d6;
+  content: "!";
+  position: relative;
+  top: 4px;
+  margin-right: .2em;
+}
+
+.wwu-75-percent-left-column .field-name-field-office-hours::before {
+  font-family: entyporegular,sans-serif;
+  font-size: 150%;
+  color: #0083d6;
+  content: "";
+  position: relative;
+  top: 4px;
+  margin-right: .2em;
+}
+
+.wwu-75-percent-left-column .field-name-field-email-address .field-item::before {
+  font-family: entyporegular,sans-serif;
+  font-size: 190%;
+  color: #0083d6;
+  content: "%";
+  position: relative;
+  top: 4px;
+  margin-right: .2em;
+  margin-right: .42em;
+}
+
+.wwu-75-percent-left-column .field-name-field-email-address a {
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.wwu-75-percent-left-column .field-name-field-office-location {
+  font-size: 1.3em;
+}
+
+.wwu-75-percent-left-column .field-name-field-office-location .field-item::before {
+  font-family: entyporegular,sans-serif;
+  font-size: 150%;
+  color: #0083d6;
+  content: "";
+  position: relative;
+  top: 4px;
+  margin-right: .2em;
+  top: 2px;
+  margin-right: .4em;
+}
+
+.wwu-75-percent-left-column .pane-user-field-about {
+  clear: left;
+}
+
+.wwu-75-percent-left-column p {
+  font-size: 1.3em;
+}
+
+.wwu-25-percent-right-column {
+  width: 24%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .wwu-25-percent-right-column {
+    width: 100%;
+  }
+}
+
+.wwu-25-percent-right-column .pane-user-field-attachments {
+  background-color: #ededed;
+  border-bottom: 3px solid #CCC;
+  padding: 15px;
+  padding-top: 1px;
+}
+
+.wwu-25-percent-right-column .pane-user-field-attachments h2 {
+  font-size: 1.5em;
+}
+
 /*
 	Print stylesheet.
 
