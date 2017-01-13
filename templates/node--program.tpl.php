@@ -7,6 +7,24 @@
  * @see https://drupal.org/node/1728164
  */
 ?>
+
+<?php 
+$dom = new DomDocument();
+$dom->loadHTML(render($content["field_instructor"]));
+$output = array();
+foreach ($dom->getElementsByTagName('a') as $item) {
+  $str = $dom->saveHTML($item);
+  $href = $item->getAttribute('href');
+  $anchorText = $item->nodeValue;
+}
+
+$result = views_get_view_result('instructor_search_by_name', 'entityreference_1', $anchorText);
+$firstName = $result[0]->_field_data["uid"]["entity"]->field_preferred_name["und"][0]["value"];
+$lastName = $result[0]->_field_data["uid"]["entity"]->field_last_name["und"][0]["value"];
+$fullName = $firstName . " " . $lastName;
+$link = "<a href=" .  $href .  ">$fullName</a>";
+?>
+
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
@@ -50,6 +68,11 @@
           <?php if($content['field_image']): print render($content['field_image']); endif; ?>
           <h1><?php print $title; ?></h1>
           <?php if (array_key_exists('field_program_description',$content)): print render($content['field_program_description']); endif; ?>
+          <?php if (array_key_exists('field_instructor', $content)): ?>
+            <p class="instructor-field">
+              <b>Instructor: </b><?php print $link; ?>
+            </p>
+          <?php endif; ?>
         </div>
 
         <div class="wwu-ee-75-percent-inset program-info" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>

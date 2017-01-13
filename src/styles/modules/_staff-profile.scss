@@ -1,0 +1,88 @@
+.wwu-75-percent-left-column {
+  width: 75%;
+  display: inline-block;
+  @media screen and (max-width: breakpoint(medium)) {
+    width: 100%;
+  }
+
+  .pane-user-field-your-photo {
+    float: left;
+    margin: 0 1.2em 1.2em 0;
+    background: #fff;
+    @media screen and (max-width: breakpoint(xsmall)) {
+      float: none;
+    }
+
+    img {
+      -webkit-box-shadow: #ddd 0 0 7px 3px;
+      -moz-box-shadow: #ddd 0 0 7px 3px;
+      box-shadow: #ddd 0 0 7px 3px;
+      padding: 10px;
+    }
+  }
+  
+  .field-name-field-academic-title {
+    color: $color-brand;
+    font-size: $staff-profile-font-size + .1em;
+    margin-top: 0;
+  }
+
+  .field-name-field-phone-number::before {
+    @include western-glyph('\0021');
+  }
+
+  .field-name-field-office-hours::before {
+    @include western-glyph('\e805');
+  }
+
+  .field-name-field-email-address {
+    .field-item::before {
+      @include western-glyph('\0025', 190%);
+      margin-right: .42em;
+    }
+    
+    a {
+      font-size: $staff-profile-font-size;
+      text-decoration: none;
+    }
+  }
+
+  .field-name-field-office-location {
+    font-size: 1.3em;
+    .field-item::before {
+      @include western-glyph('\e800');
+      top: 2px;
+      margin-right: .4em;
+    }
+  }
+
+  .pane-user-field-about {
+    clear: left;
+  }
+
+  p {
+    font-size: $staff-profile-font-size;
+  }
+}
+
+.wwu-25-percent-right-column {
+  width: 24%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;
+  @media screen and (max-width: breakpoint(medium)) {
+    width: 100%;
+  }
+  
+  .pane-user-field-attachments {
+    background-color: #ededed;
+    border-bottom: 3px solid #CCC;
+    padding: 15px;
+    padding-top: 1px;
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+}
+
+
