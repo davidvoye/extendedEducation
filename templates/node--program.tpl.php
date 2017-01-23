@@ -70,7 +70,7 @@ $link = "<a href=" .  $href .  ">$fullName</a>";
           <?php if (array_key_exists('field_program_description',$content)): print render($content['field_program_description']); endif; ?>
           <?php if (array_key_exists('field_instructor', $content)): ?>
             <p class="instructor-field">
-              <b>Instructor: </b><?php print $link; ?>
+              <b>Instructor: </b><?php print $link ?>
             </p>
           <?php endif; ?>
         </div>
