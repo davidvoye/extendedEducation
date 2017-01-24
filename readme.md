@@ -80,6 +80,3 @@ It is turned on/off in the `grunt watch` config.
   ```
   grunt watch:css
   ```
-
-### Sassyplate
-  To use [Sassyplate](https://github.com/domain7/sassyplate), run `grunt sassyplate` to clone sassyplate into the styles directory.  This is a one time task.  Don't do this halfway through the project.  Maybe remove the sassyplate commands from `Gruntfile.js` when you're done this.
