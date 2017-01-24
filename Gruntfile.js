@@ -153,19 +153,6 @@ module.exports = function(grunt) {
       }
     },
 
-    exec: {
-      sassyplate: {
-        cmd: function(){
-          var commands = [
-            'git clone git@github.com:domain7/sassyplate.git',
-            'grunt copy:sassyplate',
-            'rm -rf sassyplate'
-          ];
-          return commands.join(' && ');
-        }
-      }
-    },
-
     copy: {
       sassyplate: {
         files: [{
@@ -200,7 +187,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['js', 'css', 'svgstore']);
   grunt.registerTask('js', ['jshint', 'uglify']);
   grunt.registerTask('css', ['sass', 'postcss']);
-  grunt.registerTask('sassyplate', ['exec:sassyplate']);
 
 };
 
