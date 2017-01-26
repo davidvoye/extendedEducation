@@ -8,20 +8,33 @@
  */
 ?>
 
-<?php 
+<?php
+
+/*
+ *
+ * The default behavior of the instructor link is to display the
+ * CAS username of the instructor that links to the staff profile page. This
+ * code replaces the CAS username link text with the first and last name of the
+ * instructor.
+ *
+ */
+
+// retrieves relevant part of the dom
 $dom = new DomDocument();
 $dom->loadHTML(render($content["field_instructor"]));
-$output = array();
-foreach ($dom->getElementsByTagName('a') as $item) {
-  $str = $dom->saveHTML($item);
-  $href = $item->getAttribute('href');
-  $anchorText = $item->nodeValue;
-}
 
+// retrieves link to staff profile page
+$item = $dom->getElementsByTagName('a')->item(0);
+$href = $item->getAttribute('href');
+$anchorText = $item->nodeValue;
+
+// retrieves first and last name from view
 $result = views_get_view_result('instructor_search_by_name', 'entityreference_1', $anchorText);
 $firstName = $result[0]->_field_data["uid"]["entity"]->field_preferred_name["und"][0]["value"];
 $lastName = $result[0]->_field_data["uid"]["entity"]->field_last_name["und"][0]["value"];
 $fullName = $firstName . " " . $lastName;
+
+// builds link to staff profile page using first and last name
 $link = "<a href=" .  $href .  ">$fullName</a>";
 ?>
 
@@ -108,4 +121,3 @@ $link = "<a href=" .  $href .  ">$fullName</a>";
     </div>
   </div>
 </article>
-
