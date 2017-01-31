@@ -163,6 +163,16 @@
 
     <main role="main">
 
+      <?php if (arg(0) == "user"): ?>
+        <header class="page-title">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h1><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print $breadcrumb; ?>
+        </header>
+      <?php endif; ?>
+
       <section class="content column">
         <?php print render($page['highlighted']); ?>
         <?php print render($title_suffix); ?>
