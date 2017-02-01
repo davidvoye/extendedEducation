@@ -19,16 +19,15 @@
  *
  */
 
-$CASName = $content["og_group_ref"]["#object"]->field_instructor["und"][0]["entity"]->name;
+$userInfo = $content["og_group_ref"]["#object"]->field_instructor["und"][0]["entity"];
 
-// retrieves first and last name from view
-$result = views_get_view_result('instructor_search_by_name', 'entityreference_3', $CASName);
-$firstName = $result[0]->_field_data["uid"]["entity"]->field_preferred_name["und"][0]["value"];
-$lastName = $result[0]->_field_data["uid"]["entity"]->field_last_name["und"][0]["value"];
+$CASName = $userInfo->name;
+$firstName = $userInfo->field_preferred_name["und"][0]["value"];
+$lastName = $userInfo->field_last_name["und"][0]["value"];
 $fullName = $firstName . " " . $lastName;
 
-// builds link to staff profile page using first and last name
 $link = "<a href=" . base_path() . "users/" .  $CASName .  ">$fullName</a>";
+
 ?>
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
