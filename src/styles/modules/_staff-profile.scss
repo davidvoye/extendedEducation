@@ -59,6 +59,9 @@
 
   .pane-user-field-about {
     clear: left;
+    li {
+      font-size: $staff-profile-font-size;
+    }
   }
 
   p {
