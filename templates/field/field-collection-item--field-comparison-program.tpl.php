@@ -31,7 +31,7 @@
 <div class="program-comparison__item <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content program-list"<?php print $content_attributes; ?>>
     <figure class="program-comparison__image">
-      <?php print render($content['field_image']); ?>
+      <?php print l(render($content['field_image']), $content['field_link']['#items'][0]['display_url'], array('html' => TRUE)); ?>
     </figure>
     <div class="program-comparison__info">
       <h2 class="program-comparison__title"><?php print render($content['field_title'][0]['#markup']); ?></h2>
