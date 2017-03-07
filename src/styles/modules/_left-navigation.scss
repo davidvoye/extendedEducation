@@ -8,7 +8,7 @@
 
 } // .pane-menu-tree h2
 
-div[class*="menu-block-ctools-menu-og-"],
+.content div[class*="menu-block-"][class*="menu-level-"]:not([class*="quick-links"]),
 .menu-level-2,
 .menu-level-3 {
   margin: 0 0 60px;
