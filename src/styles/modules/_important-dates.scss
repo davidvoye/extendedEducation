@@ -36,5 +36,44 @@
     } // @media (max-width: breakpoint(xsmall))
 
   } // &__date
-
 } // .important-dates
+
+div[class*=" pane-important-dates-panel-"] {
+  background-color: $color-brand;
+  color: $color-canvas;
+  padding: 10px 10px 2em 10px;
+  text-align: center;
+
+  @media (max-width: breakpoint(xsmall)) {
+    margin-top: 1em;
+  }
+
+  h2, a {
+    color: $color-canvas;
+  }
+
+  .pane-title {
+    color: $color-canvas;
+    font-size: 24px;
+    line-height: 27px;
+    margin-top: 1em;
+  } // .pane-title
+
+  .view-content {
+    @include typography(Longform);
+    color: $color-canvas;
+
+    .views-row {
+      padding: 0.5em 0 0.75em 0;
+      font-weight: 500;
+
+      &:not(.views-row-last) {
+        border-bottom: 1px solid $color-canvas;
+      } // &:not(.views-row-last)
+    } // .views-row
+
+    *[class^='date-'] {
+      font-weight: 600;
+    } // *[class^='date-']
+  } // .view-content
+} // div[class*=" pane-important-dates-panel-"]
