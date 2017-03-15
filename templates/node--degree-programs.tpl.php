@@ -111,10 +111,12 @@
             ?>
           </ul>
         </div>
+        <?php if (isset($content['field_tuition_cost'])) : ?>
         <div class="program-info__item">
-          <h4 class="program-info__item-title"><?php print t('Tuiton Cost'); ?></h4>
+          <h4 class="program-info__item-title"><?php print t('Tuition Cost'); ?></h4>
           <p><?php print render($content['field_tuition_cost']); ?></p>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
