@@ -28,52 +28,48 @@
  * @see template_process()
  */
 ?>
-<div class="program-comparison__item <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="content program-list"<?php print $content_attributes; ?>>
-    <figure class="program-comparison__image">
-      <?php print render($content['field_image']); ?>
-    </figure>
-    <div class="program-comparison__info">
-      <h2 class="program-comparison__title"><?php print render($content['field_title'][0]['#markup']); ?></h2>
-      <?php print render($content['field_content']); ?>
-      <div class="program-comparison__link">
-        <?php print render($content['field_link']); ?>
+<a class="content-block__link" href="<?php print $content['field_link']['#items'][0]['url']; ?>">
+  <div class="program-comparison__item <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+    <div class="content program-list"<?php print $content_attributes; ?>>
+      <figure class="program-comparison__image">
+        <?php print render($content['field_image']); ?>
+      </figure>
+      <div class="program-comparison__info">
+        <h2 class="program-comparison__title"><?php print render($content['field_title'][0]['#markup']); ?></h2>
+        <?php print render($content['field_content']); ?>
       </div>
-    </div>
-    <?php if (isset($content['field_tr_audience'])) :?>
-    <div class="program-comparison__section program-comparison__audience">
-      <h3><?php print t('Audience') ?></h3>
-      <ul>
-      <?php
-        $audiences = explode("/", $content['field_tr_audience'][0]['#markup']);
-        foreach ($audiences as $audience) {
-          print('<li>'.$audience.'</li>');
-        }
-      ?>
-      </ul>
-    </div>
-    <?php endif; ?>
-    <?php if (isset($content['field_requirements'])) :?>
-    <div class="program-comparison__section program-comparison__requirements">
-      <h3><?php print t('Requirements') ?></h3>
-      <?php print render($content['field_requirements']) ?>
-    </div>
-    <?php endif; ?>
-    <?php if (isset($content['field_tr_location'])) :?>
-    <div class="program-comparison__section program-comparison__location">
-      <h3><?php print t('Location') ?></h3>
-      <ul>
-      <?php
-        $locations = explode("/", $content['field_tr_location'][0]['#markup']);
-        foreach ($locations as $location) {
-          print('<li>'.$location.'</li>');
-        }
-      ?>
-      </ul>
-    </div>
-    <?php endif; ?>
-    <div class="program-comparison__button">
-      <?php print render($content['field_link']); ?>
+      <?php if (isset($content['field_tr_audience'])) :?>
+        <div class="program-comparison__section program-comparison__audience">
+          <h3><?php print t('Audience') ?></h3>
+          <ul>
+            <?php
+            $audiences = explode("/", $content['field_tr_audience'][0]['#markup']);
+            foreach ($audiences as $audience) {
+              print('<li>'.$audience.'</li>');
+            }
+            ?>
+          </ul>
+        </div>
+      <?php endif; ?>
+      <?php if (isset($content['field_requirements'])) :?>
+        <div class="program-comparison__section program-comparison__requirements">
+          <h3><?php print t('Requirements') ?></h3>
+          <?php print render($content['field_requirements']) ?>
+        </div>
+      <?php endif; ?>
+      <?php if (isset($content['field_tr_location'])) :?>
+        <div class="program-comparison__section program-comparison__location">
+          <h3><?php print t('Location') ?></h3>
+          <ul>
+            <?php
+            $locations = explode("/", $content['field_tr_location'][0]['#markup']);
+            foreach ($locations as $location) {
+              print('<li>'.$location.'</li>');
+            }
+            ?>
+          </ul>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
-</div>
+</a>
