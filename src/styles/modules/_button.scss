@@ -22,3 +22,19 @@ a.button {
   }
 
 }
+
+input[type='button'].alt,
+input[type='submit'].alt,
+button.alt,
+a.button.alt {
+  background: transparent;
+  border: 1px solid $color-brand-accent;
+  color: $color-brand-accent;
+
+  &:hover,
+  &:focus {
+    border-color: $color-brand;
+    color: $color-brand;
+  }
+
+}
