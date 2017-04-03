@@ -1,0 +1,102 @@
+div.messages {
+  background: $color-state-info;
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgba($color-shadow, .2);
+  color: $color-canvas;
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+  margin: 20px 0;
+  padding: 10px 10px 10px 70px;
+  position: relative;
+
+  &:before {
+    background: rgba($color-shadow, .2);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
+  } // &:before
+
+  &:after {
+    background: url('../../images/info.svg') no-repeat;
+    content: '';
+    display: block;
+    font-size: 24px;
+    height: 25px;
+    left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+  } // &:after
+
+  p,
+  li {
+    color: $color-canvas;
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+  } // p, li
+
+  li {
+    background: url('../../images/bullet-one-alt.svg') no-repeat 0 10px;
+  } // li
+
+  a {
+    color: $color-canvas;
+  } // a
+
+  &.error {
+    background: $color-state-error-background;
+
+    &:after {
+      @include icon($zmdi-var-alert-triangle, $font-material);
+      background: none;
+      left: 15px;
+      width: 22px;
+    } // &:after
+
+  } // &.error
+
+  &.status {
+    background: $color-state-success;
+
+    &:after {
+      @include icon($zmdi-var-check, $font-material);
+      background: none;
+      left: 15px;
+      width: 22px;
+    } // &:after
+
+  } // &.status
+
+  &.warning {
+    background: $color-state-warning;
+    color: $color-base;
+
+    &:after {
+      @include icon($zmdi-var-flag, $font-material);
+      background: none;
+      color: $color-base;
+      left: 15px;
+      width: 22px;
+    } // &:after
+
+    p,
+    li {
+      color: $color-base;
+    } // p, li
+
+    li {
+      background: url('../../images/bullet-one.svg') no-repeat 0 10px;
+    } // li
+
+    a {
+      color: $color-base;
+    } // a
+
+  } // &.warning
+
+} // div.messages
