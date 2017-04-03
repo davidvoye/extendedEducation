@@ -75,6 +75,7 @@
     display: block !important; // override some responsive styles
     margin: -60px 0 20px !important; //override some responsive styles
     padding: 0;
+    min-height: 1px;
 
     img {
       box-shadow: 0 10px 15px 0 rgba($color-shadow, .2);
