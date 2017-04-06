@@ -88,15 +88,26 @@
 
   blockquote {
     background: transparent;
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.3em;
     margin: 80px auto 0 !important; // override some styles from another theme
     max-width: none;
     padding: 0;
     text-align: center;
     width: span(8);
+
+    & p {
+      color: $color-canvas;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.3em;
+
+      a,
+      a:active,
+      a:hover,
+      a:visited {
+        color: $color-canvas;
+      }
+    }
 
     @media (max-width: breakpoint(xsmall)) {
       width: span(12) !important; // override some styles from another theme
