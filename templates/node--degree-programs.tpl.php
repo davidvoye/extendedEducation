@@ -73,44 +73,56 @@
       </div>
       <div class="wwu-ee-25-percent-right-column program-info">
         <h3 class="program-info__title"><?php print t('At a Glance'); ?></h3>
-        <div class="program-info__item">
-          <h4 class="program-info__item-title"><?php print t('Area of Study'); ?></h4>
-          <p><?php print render($content['field_area_of_study']); ?></p>
-        </div>
-        <div class="program-info__item">
-          <h4 class="program-info__item-title"><?php print t('Who It\'s For'); ?></h4>
-          <ul>
-            <?php
-              $audiences = explode("/", $content['field_tr_audience'][0]['#markup']);
-              foreach ($audiences as $audience) {
-                print('<li>'.$audience.'</li>');
-              }
-            ?>
-          </ul>
-        </div>
-        <div class="program-info__item">
-          <h4 class="program-info__item-title"><?php print t('Format'); ?></h4>
-          <p><?php print render($content['field_format']); ?></p>
-        </div>
-        <div class="program-info__item">
-          <h4 class="program-info__item-title"><?php print t('Number of Courses'); ?></h4>
-          <p><?php print render($content['field_number_of_courses']); ?></p>
-        </div>
-        <div class="program-info__item">
-          <h4 class="program-info__item-title"><?php print t('Length'); ?></h4>
-          <p><?php print render($content['field_length']); ?></p>
-        </div>
-        <div class="program-info__item">
-          <h4 class="program-info__item-title"><?php print t('Locations Offered'); ?></h4>
-          <ul>
-            <?php
+        <?php if (isset($content['field_area_of_study'])): ?>
+          <div class="program-info__item">
+            <h4 class="program-info__item-title"><?php print t('Area of Study'); ?></h4>
+            <p><?php print render($content['field_area_of_study']); ?></p>
+          </div>
+        <?php endif; ?>
+        <?php if (isset($content['field_tr_audience'])): ?>
+          <div class="program-info__item">
+            <h4 class="program-info__item-title"><?php print t('Who It\'s For'); ?></h4>
+              <ul>
+                <?php
+                $audiences = explode("/", $content['field_tr_audience'][0]['#markup']);
+                foreach ($audiences as $audience) {
+                  print('<li>'.$audience.'</li>');
+                }
+                ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+        <?php if (isset($content['field_format'])): ?>
+          <div class="program-info__item">
+            <h4 class="program-info__item-title"><?php print t('Format'); ?></h4>
+            <p><?php print render($content['field_format']); ?></p>
+          </div>
+        <?php endif; ?>
+        <?php if (isset($content['field_number_of_courses'])): ?>
+          <div class="program-info__item">
+            <h4 class="program-info__item-title"><?php print t('Number of Courses'); ?></h4>
+            <p><?php print render($content['field_number_of_courses']); ?></p>
+          </div>
+        <?php endif; ?>
+        <?php if (isset($content['field_length'])): ?>
+          <div class="program-info__item">
+            <h4 class="program-info__item-title"><?php print t('Length'); ?></h4>
+            <p><?php print render($content['field_length']); ?></p>
+          </div>
+        <?php endif; ?>
+        <?php if (isset($content['field_tr_location'])): ?>
+          <div class="program-info__item">
+            <h4 class="program-info__item-title"><?php print t('Locations Offered'); ?></h4>
+            <ul>
+              <?php
               $locations = explode("/", $content['field_tr_location'][0]['#markup']);
               foreach ($locations as $location) {
                 print('<li>'.$location.'</li>');
               }
-            ?>
-          </ul>
-        </div>
+              ?>
+            </ul>
+          </div>
+        <?php endif; ?>
         <?php if (isset($content['field_tuition_cost'])) : ?>
         <div class="program-info__item">
           <h4 class="program-info__item-title"><?php print t('Tuition Cost'); ?></h4>
