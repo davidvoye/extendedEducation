@@ -1,0 +1,22 @@
+.fa-list-group {
+  border-radius: 5px;
+  border: 1px solid #CCC;
+  display: inline-block;
+  &.fa-list-group-full-width {
+    display: block;
+  }
+
+  .list-group-item {
+    display: block;
+    text-decoration: none;
+    list-style-type: none;
+    padding: .5em;
+    padding-left: 1em;
+    border-bottom: 1px solid #CCC;
+    min-width: 300px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

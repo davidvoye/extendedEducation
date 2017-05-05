@@ -19,6 +19,28 @@
   font-style: normal;
 }
 
+.fa-lg {
+  font-size: 1.333em;
+  line-height: .75em;
+  vertical-align: -15%;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
 
 /*
   Font Awesome variables
@@ -1220,3 +1242,4 @@ $icon-youtube-square: "\f166" !default;
 .fa-train:before { content: $icon-train; }
 .fa-subway:before { content: $icon-subway; }
 .fa-medium:before { content: $icon-medium; }
+
