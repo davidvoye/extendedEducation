@@ -178,7 +178,8 @@
   <div class="full-width full-width--narrow full-width--negative-top full-width--negative-bottom">
     <div id="info" class="full-width__inside sticky-nav-section">
       <h2 class="u-no-margin-top"><?php print t('Contact'); ?></h2>
-      <?php print render($content['field_dp_contact']); ?>
+        <?php print render($content['field_program_contact']); ?>
+        <?php print render($content['field_dp_contact']); ?>
     </div>
   </div>
 
