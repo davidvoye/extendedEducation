@@ -31,10 +31,26 @@ $link = "<a href=" . base_path() . "users/" .  $CASName .  ">$fullName</a>";
 ?>
 
 
-// prints basic xenegrade page alert
+
+
 <?php
-  $xenegrade_alert = node_load(600);
-  print $xenegrade_alert->field_content;
+
+/*
+* prints basic xenegrade page alert
+*/
+$xenegrade_alert = new EntityFieldQuery();
+  $entities = $xenegrade_alert->entityCondition('entity_type', 'node')
+  ->propertyCondition('type', 'basic_page')
+  ->propertyCondition('nid', '600')
+  ->propertyCondition('status', 1)
+  ->propertyCondition('field_content', 'field_content')
+  ->range(0,1)
+  ->execute();
+
+  if (!empty($entities['node'])) {
+    $node = node_load(array_shift(array_keys($entities['node'])));
+  }
+
 ?>
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
