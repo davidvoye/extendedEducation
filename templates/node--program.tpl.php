@@ -49,30 +49,9 @@ $xenegrade_alert = new EntityFieldQuery();
 
   if (!empty($entities['node'])) {
     $node = node_load(array_shift(array_keys($entities['node'])));
+    print $node;
   }
-  $query = new EntityFieldQuery();
-$query->entityCondition('entity_type', 'node')
-  ->entityCondition('bundle', 'article')
-  ->propertyCondition('status', NODE_PUBLISHED)
-  ->fieldCondition('field_news_types', 'value', 'spotlight', '=')
-  // See the comment about != NULL above.
-  ->fieldCondition('field_photo', 'fid', 'NULL', '!=')
-  ->fieldCondition('field_faculty_tag', 'tid', $value)
-  ->fieldCondition('field_news_publishdate', 'value', $year . '%', 'like')
-  ->fieldOrderBy('field_photo', 'fid', 'DESC')
-  ->range(0, 10)
-  // Run the query as user 1.
-  ->addMetaData('account', user_load(1));
-
-$result = $query->execute();
-if (isset($result['node'])) {
-  $news_items_nids = array_keys($result['node']);
-  $news_items = entity_load('node', $news_items_nids);
-}
-
-  $xenegrade_alert = node_load(600);
-  print $xenegrade_alert->field_content;
-?>
+  ?>
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
