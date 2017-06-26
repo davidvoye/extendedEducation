@@ -43,7 +43,7 @@ $xenegrade_alert = new EntityFieldQuery();
   ->propertyCondition('type', 'basic_page')
   ->propertyCondition('nid', '600')
   ->propertyCondition('status', 1)
-  ->propertyCondition('field_content', 'field_content')
+
   ->range(0,1)
   ->execute();
 
