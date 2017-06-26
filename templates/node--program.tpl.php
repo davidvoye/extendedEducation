@@ -30,6 +30,13 @@ $link = "<a href=" . base_path() . "users/" .  $CASName .  ">$fullName</a>";
 
 ?>
 
+
+// prints basic xenegrade page alert
+<?php
+  $xenegrade_alert = node_load(600);
+  print $xenegrade_alert->field_content;
+?>
+
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
