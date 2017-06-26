@@ -37,7 +37,7 @@ $link = "<a href=" . base_path() . "users/" .  $CASName .  ">$fullName</a>";
 /*
 * prints basic xenegrade page alert
 */
-  $xenegrade_alert = node_load(600);
+  $xenegrade_alert => node_load(600);
   print $xenegrade_alert;
 ?>
 
