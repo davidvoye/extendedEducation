@@ -52,10 +52,9 @@ function views_embed_view($name, $display_id = 'default') {
 
   return $view->preview($display_id, $args);
 }
-
+print views_embed_view('xenegrade_alert_view');
 ?>
 
-<?php print views_embed_view('xenegrade_alert_view','embed_1', $node->nid); ?>
 
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
