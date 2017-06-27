@@ -32,8 +32,10 @@ $link = "<a href=" . base_path() . "users/" .  $CASName .  ">$fullName</a>";
 <?php
 
 /*
-* prints a xenegrade page alert in a node with
-* the standard views_embed_view function from Drupal 7
+*
+* Renders a Xenegrade page alert in a node with
+* the standard views_embed_view function from Drupal 7.
+*
 */
 
 print views_embed_view('xenegrade_alert_view', 'embed_1');
