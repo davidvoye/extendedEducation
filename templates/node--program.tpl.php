@@ -34,12 +34,29 @@ $link = "<a href=" . base_path() . "users/" .  $CASName .  ">$fullName</a>";
 
 
 <?php
+
 /*
 * prints basic xenegrade page alert
 */
-  $xenegrade_alert = node_load(600);
-  print $xenegrade_alert->$field_content;
+function views_embed_view($name, $display_id = 'default') {
+  $args = func_get_args();
+  array_shift($args); // remove $name
+  if (count($args)) {
+    array_shift($args); // remove $display_id
+  }
+
+  $view = views_get_view($name);
+  if (!$view || !$view->access($display_id)) {
+    return;
+  }
+
+  return $view->preview($display_id, $args);
+}
+
 ?>
+
+<?php print views_embed_view('xenegrade_alert_view','embed_1', $node->nid); ?>
+
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
