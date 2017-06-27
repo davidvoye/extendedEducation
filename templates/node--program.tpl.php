@@ -27,7 +27,18 @@ $lastName = $userInfo->field_last_name["und"][0]["value"];
 $fullName = $firstName . " " . $lastName;
 
 $link = "<a href=" . base_path() . "users/" .  $CASName .  ">$fullName</a>";
+?>
 
+<?php
+
+/*
+*
+* Renders a Xenegrade page alert in a node with
+* the standard views_embed_view function from Drupal 7.
+*
+*/
+
+print views_embed_view('xenegrade_alert_view', 'embed_1');
 ?>
 
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
