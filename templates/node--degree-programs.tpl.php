@@ -123,6 +123,14 @@
             </ul>
           </div>
         <?php endif; ?>
+
+        <?php if ($content['field_is_online']['#items'][0]['value']==1): ?>
+          <div class="program-list__online">
+            <p>Online</p>
+          </div>
+        <?php endif; ?>
+
+
         <?php if (isset($content['field_tuition_cost'])) : ?>
         <div class="program-info__item">
           <h4 class="program-info__item-title"><?php print t('Tuition Cost'); ?></h4>
