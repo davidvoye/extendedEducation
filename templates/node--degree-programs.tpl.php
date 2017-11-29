@@ -171,7 +171,7 @@
     <h2 class="degree-content__title"><?php print t('Admissions'); ?></h2>
     <div class="split-block equal-height">
       <div class="split-block__left equal-height__item">
-        <h3 class="split-block__title"><?php print t('Ready to Enroll?'); ?></h3>
+        <h3 class="split-block__title"><?php print t('Next Steps'); ?></h3>
         <?php print render($content['field_ready_to_enroll']); ?>
       </div>
       <div class="split-block__right split-block__right--center equal-height__item">
