@@ -100,7 +100,7 @@
         <?php endif; ?>
         <?php if (isset($content['field_number_of_courses'])): ?>
           <div class="program-info__item">
-            <h4 class="program-info__item-title"><?php print t('Number of Courses'); ?></h4>
+            <h4 class="program-info__item-title"><?php print t('Number of Credits'); ?></h4>
             <p><?php print render($content['field_number_of_courses']); ?></p>
           </div>
         <?php endif; ?>
