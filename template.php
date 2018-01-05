@@ -284,6 +284,7 @@ function wwuzen_dual_ee_preprocess_node_program(&$variables, $hook) {
     'field_program_cost_details',
     'field_prog_cancellation_policy',
     'field_program_scholarship',
+    'field_program_testimonials',
   );
 }
 
