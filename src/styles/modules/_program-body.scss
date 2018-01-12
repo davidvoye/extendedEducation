@@ -118,7 +118,7 @@
     &__program_testimonials {
       h2 {
         &:before {
-          @include icon($zmdi-var-graduation-cap, $font-material);
+          @include icon($zmdi-var-comments, $font-material);
         } // :before
       } // h2
     } // .pane-node-field-program-testimonials
