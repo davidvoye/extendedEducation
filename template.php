@@ -172,8 +172,6 @@ function wwuzen_dual_ee_preprocess_html(&$variables, $hook) {
 
 function wwuzen_dual_ee_preprocess_page(&$variables, $hook) {
   //Render the search box variable so we can place it in the header.
-  $search_box = drupal_get_form('google_appliance_block_form');
-  $variables['search_box'] = drupal_render($search_box);
   $variables['department_name'] = theme_get_setting('department_name');
   $variables['inside_section'] = false;
 
