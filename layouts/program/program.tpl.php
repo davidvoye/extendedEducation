@@ -26,7 +26,7 @@
         <?php print $content['header-left']; ?>
       </div>
       <div class="wwu-ee-25-percent-right-column program--info" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-        <h3 class="program--info__title"><?php print t('At a Glance'); ?></h3>
+        <h2 class="program--info__title"><?php print t('At a Glance'); ?></h2>
         <?php print $content['header-right']; ?>
       </div>
     </div>
