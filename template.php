@@ -286,6 +286,23 @@ function wwuzen_dual_ee_preprocess_node_program(&$variables, $hook) {
   );
 }
 
+/**
+ * Implements template_preprocess_field().
+ */
+function wwuzen_dual_ee_preprocess_field(&$variables, $hook) {
+  $element = $variables['element'];
+  $field_name = $element['#field_name'];
+
+  if ($field_name === 'field_course_term_offered') {
+    if (count($variables['items']) == 4) {
+      unset($variables['items']);
+      $variables['items'] = array();
+      $variables['items'][] = array(
+        '#markup' => 'Available Anytime',
+      );
+    }
+  }
+}
 
 /**
  * Override or insert variables into the comment templates.
