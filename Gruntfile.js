@@ -42,6 +42,7 @@ module.exports = function(grunt) {
             'src/js/modules/smooth-scroll.js',
             'src/js/modules/degree-programs.js',
             'src/js/modules/program-comparison.js',
+            'src/js/modules/online-courses.js',
             'src/js/modules/object-fit.js',
             'src/js/modules/region-bottom.js'
           ]
