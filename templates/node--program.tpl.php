@@ -92,7 +92,7 @@ print views_embed_view('xenegrade_alert_view', 'embed_1');
         </div>
 
         <div class="wwu-ee-75-percent-inset program-info" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-          <h3 class="program-info__title"><?php print t('At a Glance'); ?></h3>
+          <h2 class="program-info__title"><?php print t('At a Glance'); ?></h2>
           <?php foreach($program_info_fields as $field): ?>
             <?php if($content[$field]): ?>
               <div class="program-info__item program-info__item--<?php print str_replace('_', '-', str_replace('field_', '', $field)); ?>">
