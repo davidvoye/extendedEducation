@@ -27,36 +27,50 @@ footer {
       position: relative;
 
       &:before {
-        color: $color-program-3;
-        font-family: $font-fontello;
-        font-size: 14px;
         left: 0;
         position: absolute;
       }
 
-      &:first-of-type:before {
+      .ee-address, .ee-phone, .ee-email {
+        &:before {
+          color: $color-program-3;
+          font-family: $font-fontello;
+          font-size: 14px;
+        }
+      }
+
+      .ee-address:before {
         content: '\e800';
         height: 12px;
         width: 14px;
+        padding-right: 11px;
+        margin-left: -24px;
       }
 
-      &:nth-of-type(2):before {
+      .ee-phone:before {
         content: '\21';
         height: 10px;
         width: 12px;
+        padding-right: 11px;
+        margin-left: -24px;
       }
 
-      &:last-of-type:before {
+      .ee-email:before {
         content: '\25';
         height: 8px;
-        margin-left: 1px;
         width: 11px;
+        padding-right: 11px;
+        margin-left: -24px;
       }
 
     } // p{
 
     a {
       color: $color-canvas;
+
+      &:focus, &:hover {
+        color: $color-brand-accent2;
+      }
     } // a
 
   } // .footer-left
