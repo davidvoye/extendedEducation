@@ -235,26 +235,27 @@
         <?php print render($page['footer_center']); ?>
       </div>
 
-      <div class="footer-right" role="complementary">
+      <div class="footer-right" role="complementary" aria-label="Western Contact Info">
         <h1><a href="http://www.wwu.edu">Western Washington University</a></h1>
 
-          <div class="western-contact-info">
-            <p class="western-address">516 High Street<br>
-              Bellingham, WA 98225</p>
-            <p class="western-telephone"><a href="tel:3606503000">(360) 650-3000</a></p>
-            <p class="western-contact"><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
-          </div>
+        <div class="western-contact-info">
+          <p><span aria-hidden="true" class="western-address"></span>516 High Street<br>
+            <span class="western-address-city">Bellingham, WA 98225</span></p>
+          <p><span aria-hidden="true" class="western-telephone"></span><a href="tel:3606503000">(360) 650-3000</a></p>
+          <p><span aria-hidden="true" class="western-contact"></span><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
+        </div>
 
-          <div class="western-social-media">
-            <ul>
-              <li><a class="westernIcons-FacebookIcon" href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
-              <li><a class="westernIcons-FlickrIcon" href="http://www.flickr.com/wwu">Flickr</a></li>
-              <li><a class="westernIcons-TwitterIcon" href="https://twitter.com/#!/WWU">Twitter</a></li>
-              <li><a class="westernIcons-YouTubeIcon" href="http://www.youtube.com/wwu">Youtube</a></li>
-              <li><a class="westernIcons-GooglePlusIcon" href="https://plus.google.com/+wwu/posts">Google Plus</a></li>
-              <li><a class="westernIcons-RSSicon" href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a></li>
-            </ul>
-          </div>
+        <div class="western-social-media">
+          <ul>
+            <li><a href="https://social.wwu.edu"><span aria-hidden="true" class="westernIcons-WwuSocialIcon"></span>Western Social</a></li>
+            <li><a href="http://www.facebook.com/westernwashingtonuniversity"><span aria-hidden="true" class="westernIcons-FacebookIcon"></span>Facebook</a></li>
+            <li><a href="http://www.flickr.com/wwu"><span aria-hidden="true" class="westernIcons-FlickrIcon"></span>Flickr</a></li>
+            <li><a href="https://twitter.com/WWU"><span aria-hidden="true" class="westernIcons-TwitterIcon"></span>Twitter</a></li>
+            <li><a href="http://www.youtube.com/wwu"><span aria-hidden="true" class="westernIcons-YouTubeIcon"></span>Youtube</a></li>
+            <li><a href="https://plus.google.com/+wwu/posts"><span aria-hidden="true" class="westernIcons-GooglePlusIcon"></span>Google Plus</a></li>
+            <li><a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><span aria-hidden="true" class="westernIcons-RSSicon"></span>RSS</a></li>
+          </ul>
+        </div>
 
         <?php print render($page['footer_right']); ?>
       </div>
