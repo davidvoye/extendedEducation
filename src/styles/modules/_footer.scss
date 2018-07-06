@@ -95,8 +95,10 @@ footer {
       height: auto;
       text-decoration: none;
 
-      &:before {
-        font-size: 25px;
+      span {
+        &:before {
+          font-size: 25px;
+      }
       } // &:before
 
     } // .footer-right .western-social-media a
